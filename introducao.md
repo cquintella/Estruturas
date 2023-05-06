@@ -12,10 +12,10 @@ author: carlos.quintella@uva.br
 
 Lidamos com dados todos os dias e a forma com que lidamos com ele faz toda a diferença para o desempenho de nossas atividades.
 
-### Exemplos ###
+### Exemplos de atividades fortemente baseada em dados ###
 
-* A organização de um indice de livro, 
-* A navegacao em uma cidade, ou mesmo
+* A organização de um índice de livro, 
+* A navegação em uma cidade, ou mesmo
 * Uma lista de compras.
 
 ---
@@ -36,13 +36,11 @@ O conteúdo do curso envolve:
 * Vetores
 * Matrizes
 * Operações sobre as matrizes
-
 * Grafos
 * Estruturas de dados compostas
-* Pilhas
-* Filas
+* Pilhas e Filas
 * Listas encadeadas simples e duplamente encadeadas :check:
-Árvores
+* Árvores
 
 ---
 
