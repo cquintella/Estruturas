@@ -6,18 +6,17 @@ paginate: true
 theme: gaia
 ---
 
+RASCUNHO
+
 <!-- class: invert -->
 <!-- _class: lead -->
 <!-- _color: white -->
 
-# C++ : Bibliotecas STD e STL #
+# C++ : Bibliotecas #
 
 ---
 
-A biblioteca std apresenta arrays especiais que sao mais seguros que os arrays do c.
-std::array.
-
-auto
+O C++ possui uma variedade de bibliotecas padrão disponíveis para o desenvolvimento de aplicações. Aqui estão algumas das principais bibliotecas embutidas no C++:
 
 ---
 

@@ -60,3 +60,9 @@ O conteúdo do curso envolve:
 ## Definições ##
 
 Estrura de dados é uma tecnica de organização dos dados no computador para que possa ser usado de forma eficiente.
+
+---
+
+## Bibliografia ##
+
+"Introduction to Algorithms" by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein
