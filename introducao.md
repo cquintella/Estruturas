@@ -1,12 +1,17 @@
 ---
 marp: true
-theme: gaia
 author: carlos.quintella@uva.br
+backgroundColor: white
+paginate: true
+theme: gaia
 ---
 
-
-
 # Estrutura de Dados
+
+Professor: Carlos Alvaro Quintella
+5/6/2023
+
+---
 
 ## Apresentação do curso ##
 
@@ -32,6 +37,7 @@ O conteúdo do curso envolve:
 
 * Revisao de C e C++
 * Ponteiros
+* Recursão
 * Complexidade de algoritmos
 * Vetores
 * Matrizes
@@ -46,9 +52,8 @@ O conteúdo do curso envolve:
 
 ## Avaliação ##
 
-Avaliação será será feita através de três provas.
-
-Presença é obrigatória, uma vez que eu preciso lembbrar que conheço vocês para atruir qual ponto de conceito.
+* Avaliação será será feita através de três provas.
+* Presença é obrigatória, uma vez que eu preciso lembbrar que conheço vocês para atruir qual ponto de conceito.
 
 ---
 
