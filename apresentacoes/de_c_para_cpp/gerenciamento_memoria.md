@@ -7,7 +7,7 @@ theme: gaia
 
 <!-- _class: lead -->
 
-# Novidades no Gerenciamento de Memória #
+# Novidades no Gerenciamento de Memória Dinâmica#
 
 ---
 
