@@ -1,25 +1,27 @@
 ---
 marp: true
 author: carlos.quintella@uva.br
-backgroundColor: black
 paginate: true
 theme: gaia
 ---
 
-<!-- class: invert -->
+
 <!-- _class: lead -->
-<!-- _color: white -->
 
 # Boas Práticas de Programação Segura #
 
-As boas práticas de programação segura são essenciais para garantir que seu código seja confiável e protegido contra vulnerabilidades e ameaças. Abaixo estão algumas dicas e técnicas fundamentais para garantir a segurança do seu código:
+---
 
-Validação de entrada e saída de dados
-Sempre valide os dados de entrada do usuário para garantir que eles estejam no formato esperado.
-Use funções de tratamento de strings seguras, como strncpy(), strncat() e snprintf().
+As boas práticas de programação segura são essenciais para garantir que seu código seja confiável e protegido contra vulnerabilidades e ameaças. 
+
+Dicas e técnicas fundamentais para garantir a segurança do seu código:
+
+- Validação de entrada e saída de dados: Sempre valide os dados de entrada do usuário para garantir que eles estejam no formato esperado.
+
+- Use funções de tratamento de strings seguras, como strncpy(), strncat() e snprintf().
 Evite a utilização de funções inseguras, como strcpy(), strcat() e sprintf().
-c
-Copy code
+
+```c
 #include <stdio.h>
 #include <string.h>
 
@@ -42,12 +44,20 @@ int main() {
     printf("String copiada com segurança: %s", sanitized_input);
     return 0;
 }
-Gerenciamento de memória
-Use funções seguras de alocação de memória, como calloc(), ao invés de malloc().
-Sempre libere a memória alocada usando a função free().
-Verifique se há erros de alocação de memória e trate-os adequadamente.
-c
-Copy code
+```
+
+---
+
+- Gerenciamento de memória: Use funções seguras de alocação de memória, como calloc(), ao invés de malloc().
+- Sempre libere a memória alocada usando a função free().
+
+_Nota_: `calloc()` inicializa a memória com zeros.
+
+---
+
+- Verifique o retorno das funções de alocação: Ao usar funções de alocação de memória, como malloc, calloc ou realloc, sempre verifique o retorno. Se a alocação falhar, essas funções retornarão um ponteiro nulo (NULL).
+
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -69,11 +79,15 @@ int main() {
     free(array);
     return 0;
 }
-Tratamento de erros
-Verifique sempre o retorno das funções e trate os erros adequadamente.
+```
+
+---
+
+- Tratamento de erros: Verifique sempre o retorno das funções e trate os erros adequadamente.
 Use mecanismos de tratamento de exceção, como errno e perror().
-c
-Copy code
+
+```c
+
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
@@ -91,26 +105,32 @@ int main() {
     fclose(file);
     return 0;
 }
-Proteção de recursos
 
-Use princípios de "menor privilégio" para limitar o acesso a recursos do sistema.
-Garanta que os recursos sejam protegidos com os mecanismos adequados, como criptografia ou autenticação.
-Atualização de dependências e bibliotecas
+```
 
-Mantenha sempre suas bibliotecas e dependências atualizadas para evitar vulnerabilidades conhecidas.
+---
 
+- Proteção de recursos: Use princípios de "menor privilégio" para limitar o acesso a recursos do sistema.
+
+- Garanta que os recursos sejam protegidos com os mecanismos adequados, como criptografia ou autenticação.
+Atualização de dependências e bibliotecas.
+
+- Mantenha sempre suas bibliotecas e dependências atualizadas para evitar vulnerabilidades conhecidas.
+
+---
 
 Testes e análise de código
 Realize testes de unidade e integração para verificar a segurança e confiabilidade do seu código.
-Use ferramentas de análise estática e dinâmica de código para identificar possíveis vulnerabilidades e erros de programação.
+
+- Use ferramentas de análise estática e dinâmica de código para identificar possíveis vulnerabilidades e erros de programação.
 Sugestão de ferramentas de análise de código:
 
-Análise estática:
-
-Clang Static Analyzer (http://clang-analyzer.llvm.org/): Um analisador de código estático integrado ao compilador Clang, específico para C, C++ e Objective-C.
-Cppcheck (http://cppcheck.sourceforge.net/): Uma ferramenta de análise estática de código para C e C++ que ajuda a detectar erros e vulnerabilidades no código-fonte.
-Flawfinder (https://dwheeler.com/flawfinder/): Uma ferramenta de análise estática de código que examina o código-fonte em C e C++ e relata possíveis vulnerabilidades de segurança.
+- Estáticas:
+- Clang Static Analyzer: Uma ferramenta de análise de código estática baseada no compilador Clang, que identifica problemas no código C e C++.
+- Cppcheck: Uma ferramenta de análise estática de código para C/C++ que verifica erros e vulnerabilidades comuns.
+- Flawfinder (https://dwheeler.com/flawfinder/): Uma ferramenta de análise estática de código que examina o código-fonte em C e C++ e relata possíveis vulnerabilidades de segurança.
 PVS-Studio (https://www.viva64.com/en/pvs-studio/): Uma ferramenta de análise estática de código para C, C++, C#, e Java que ajuda a detectar erros de programação, incluindo problemas de segurança.
+
 Análise dinâmica:
 
 Valgrind (http://valgrind.org/): Uma suíte de ferramentas de análise dinâmica de código para depurar e monitorar a execução de programas escritos em C e C++. A ferramenta principal, Memcheck, detecta problemas de gerenciamento de memória e concorrência.
