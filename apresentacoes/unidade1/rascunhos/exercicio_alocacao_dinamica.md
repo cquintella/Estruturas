@@ -7,6 +7,14 @@ theme: gaia
 
 <!-- _class: lead -->
 
+# Exercício #
+
+![UVA 50% bg left:20%](https://uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
+
+---
+
+
+
 1) Crie uma variável que é um ponteiro para uma área de memória que tem um inteiro com valor 1999.
 
 ---

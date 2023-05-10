@@ -1,20 +1,20 @@
 ---
 marp: true
 author: carlos.quintella@uva.br
-background: white
+backgroundColor: white
 paginate: true
 footer: Estrutura de Dados
 theme: gaia
 ---
 
 <!-- _class: lead -->
-![UVA 50% bg left:20%](https://uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
 
 # TAD - Tipo Abstrato de Dados #
 
-Carlos Alvaro Quintella
-08/05/2023
+![UVA 50% bg left:20%](https://uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
 
+- Professor: Carlos Alvaro Quintella
+- Revisão: 10/05/2023
 
 ---
 
@@ -24,31 +24,19 @@ Tipo Abstrato de Dados (TAD) é uma abstração que define um tipo de dado e ope
 
 ---
 
-## Exemplo de TAD em pseudo-código, definindo uma pilha. ##
+## Exemplo de TAD em pseudo-código, definindo uma pilha ##
 
 ```text
-
-**TAD Pilha**
-
-**Estrutura**
-
-_class Pilha:_
+class Pilha:
     elementos: lista
     topo: inteiro
 
-
-_Operações_
-
- - Inicializar Pilha
-
-- Verificar se a Pilha está Vazia
-
-- Empilhar
-
-- Desempilhar
-
-- Consultar Topo
-
+Operações:
+ - Inicializar Pilha 
+ - Verificar se a Pilha está Vazia
+ - Empilhar
+ - Desempilhar
+ - Consultar Topo
 ```
 
 ---
@@ -57,10 +45,13 @@ _Operações_
 
 ---
 
-## As vantagens de usar Tipos Abstratos de Dados (TADs) incluem: ##
+## As vantagens de usar Tipos Abstratos de Dados #
 
 1. **Encapsulamento**: TADs escondem a implementação dos dados, permitindo acesso apenas através das operações definidas. Isso separa a interface do usuário da implementação, facilitando a manutenção e evolução do código.
 2. **Modularidade**: Ao utilizar TADs, é mais fácil dividir um programa em componentes menores e independentes, tornando o desenvolvimento e a depuração mais eficientes.
+
+---
+
 3. **Reutilização de código**: TADs facilitam a reutilização de código, já que permitem criar bibliotecas de estruturas de dados que podem ser aplicadas em diferentes projetos.
 4. **Abstração**: TADs permitem aos programadores se concentrarem na lógica de alto nível, sem se preocupar com os detalhes de baixo nível da implementação.
 
@@ -84,4 +75,6 @@ TADs, ou Tipos Abstratos de Dados, são abstrações que permitem aos programado
 
 ---
 
-[video](https://www.youtube.com/watch?v=nX_3zUmNFFs)
+## Links ##
+
+- [Video sobre TAD](https://www.youtube.com/watch?v=nX_3zUmNFFs)

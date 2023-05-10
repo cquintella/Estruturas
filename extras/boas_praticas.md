@@ -2,6 +2,7 @@
 marp: true
 author: carlos.quintella@uva.br
 paginate: true
+backgroundColor: white
 theme: gaia
 ---
 
@@ -9,6 +10,9 @@ theme: gaia
 <!-- _class: lead -->
 
 # Boas Práticas de Programação Segura #
+
+- Professor: Carlos Alvaro Quintella
+- Revisão 10/05/2023
 
 ---
 

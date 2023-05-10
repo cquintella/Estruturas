@@ -9,6 +9,8 @@ backgroundColor: #fff
 
 # Exame de Ciências da Computação #
 
+![UVA 50% bg left:20%](https://uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
+
 Tópico: Notação Big-O (Análise de Complexidade Algoritmos)
 
 ---

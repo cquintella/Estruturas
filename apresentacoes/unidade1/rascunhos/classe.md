@@ -8,6 +8,8 @@ paginate: true
 
 # Classe #
 
+![UVA 50% bg left:20%](https://uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
+
 Professor: carlos Alvaro Quintella
 08/04/2023
 

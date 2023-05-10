@@ -1,45 +1,80 @@
 ---
 marp: true
 author: carlos.quintella@uva.br
-background: white
+backgroundColor: white
 paginate: true
 footer: Estrutura de Dados
 theme: gaia
 ---
 
 <!-- _class: lead -->
-![UVA 50% bg left:20%](https://uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
 
 # Programação Dinâmica e Recursão #
 
-Professor: Carlos Alvaro Quintella
+- Professor: Carlos Alvaro Quintella
+- Revisão: 10/05/2023
+
+![UVA 70% bg left:20%](https://uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
 
 ---
 
 ## Programação Dinamica ##
 
-A programação dinâmica é uma técnica de resolução de problemas computacionais que consiste em dividir um problema em subproblemas menores e resolvê-los apenas uma vez, armazenando suas soluções para evitar a repetição desnecessária do cálculo. É útil em problemas com sobreposição de subproblemas e é amplamente utilizada em áreas como inteligência artificial, otimização, engenharia de software e finanças. É aplicável a uma ampla variedade de problemas, como encontrar o caminho mais curto em um grafo ou calcular a sequência de Fibonacci.
+- Técnica de resolução de problemas computacionais
+- Dividir problemas em subproblemas menores
+- Resolver subproblemas uma única vez e armazenar soluções
+- Útil em problemas com sobreposição de subproblemas
+- Aplicações: IA, otimização, engenharia de software, finanças
+- Exemplos: caminho mais curto em grafo, sequência de Fibonacci
 
 ---
+
+### Tipos ###
+
+1. Programação Dinâmica Clássica:
+   - Otimização de função objetivo com restrições
+   - Subproblemas resolvidos de forma recursiva
+
+2. Programação Dinâmica Baseada em Memória (memoização):
+   - Resolver problemas de otimização
+   - Encontrar melhor sequência de decisões
+   - Utilizar tabela ou matriz para armazenar soluções de subproblemas
+
+<!-- A programação dinâmica é uma técnica de resolução de problemas computacionais que consiste em dividir um problema em subproblemas menores e resolvê-los apenas uma vez, armazenando suas soluções para evitar a repetição desnecessária do cálculo. É útil em problemas com sobreposição de subproblemas e é amplamente utilizada em áreas como inteligência artificial, otimização, engenharia de software e finanças. É aplicável a uma ampla variedade de problemas, como encontrar o caminho mais curto em um grafo ou calcular a sequência de Fibonacci.
 
 A programação dinâmica pode ser dividida em dois tipos principais: programação dinâmica clássica e programação dinâmica baseada em memória. 
-O primeiro é utilizado em problemas que precisam otimizar uma função objetivo sujeita a algumas restrições, quebrando o problema em subproblemas menores e mais simples resolvidos de forma recursiva. Já o segundo tipo é usado para resolver problemas de otimização, encontrando a melhor sequência de decisões a serem tomadas, utilizando uma tabela ou matriz para armazenar soluções para subproblemas que são reutilizados para encontrar a solução para o problema original.
+O primeiro é utilizado em problemas que precisam otimizar uma função objetivo sujeita a algumas restrições, quebrando o problema em subproblemas menores e mais simples resolvidos de forma recursiva. Já o segundo tipo é usado para resolver problemas de otimização, encontrando a melhor sequência de decisões a serem tomadas, utilizando uma tabela ou matriz para armazenar soluções para subproblemas que são reutilizados para encontrar a solução para o problema original. -->
 
----
-
-## Como funciona a chamada de funções ##
-
-Quando uma função é chamada em C, o sistema precisa armazenar informações importantes para garantir que a função seja executada e o programa continue a execução corretamente de onde parou.
-
----
-
-### Divisão da PD ##
+<!-- Divisão da Programacao dinamica
 
 A programação dinâmica pode ser dividida em dois tipos principais:
 
-    Programação dinâmica clássica: Este tipo de programação dinâmica é aplicado em problemas onde é necessário otimizar uma função objetivo sujeita a algumas restrições. Ele quebra o problema em subproblemas menores e mais simples que são resolvidos de forma recursiva. A solução final é obtida combinando as soluções dos subproblemas. Exemplos de problemas clássicos de programação dinâmica incluem a Mochila 0/1, o Problema do Caixeiro Viajante e o Problema da Sequência Comum Mais Longa.
+- Programação dinâmica clássica: Este tipo de programação dinâmica é aplicado em problemas onde é necessário otimizar uma função objetivo sujeita a algumas restrições. Ele quebra o problema em subproblemas menores e mais simples que são resolvidos de forma recursiva. A solução final é obtida combinando as soluções dos subproblemas. Exemplos de problemas clássicos de programação dinâmica incluem a Mochila 0/1, o Problema do Caixeiro Viajante e o Problema da Sequência Comum Mais Longa.
 
-    Programação dinâmica baseada em memória: Este tipo de programação dinâmica é usado para resolver problemas de otimização que envolvem encontrar a melhor sequência de decisões a serem tomadas. Em vez de dividir o problema em subproblemas menores, este método usa uma tabela ou matriz para armazenar soluções para subproblemas que são reutilizados para encontrar a solução para o problema original. Exemplos de problemas baseados em memória incluem a Busca em Profundidade, a Busca em Largura e o Algoritmo de Dijkstra para encontrar o caminho mais curto em um grafo ponderado.
+Programação dinâmica baseada em memória: Este tipo de programação dinâmica é usado para resolver problemas de otimização que envolvem encontrar a melhor sequência de decisões a serem tomadas. Em vez de dividir o problema em subproblemas menores, este método usa uma tabela ou matriz para armazenar soluções para subproblemas que são reutilizados para encontrar a solução para o problema original. Exemplos de problemas baseados em memória incluem a Busca em Profundidade, a Busca em Largura e o Algoritmo de Dijkstra para encontrar o caminho mais curto em um grafo ponderado.
+-->
+
+---
+
+## Recursão ##
+
+---
+
+### Função ###
+
+Para entender o que é recursão precisamos voltar a definição de uma função.
+
+- Uma função em C é um bloco de código que possui um tipo de retorno e recebe parâmetros, sendo responsável por executar uma tarefa específica. As funções desempenham um papel fundamental na programação em C, pois possibilitam dividir o código em partes menores e modulares, facilitando a organização, compreensão e manutenção do código.
+
+---
+
+- O tipo de retorno de uma função indica o tipo de dado que ela retorna ao ser chamada. Os parâmetros são variáveis passadas à função, permitindo que ela receba informações e opere com base nessas informações.
+
+---
+
+### Como funciona a chamada de funções ###
+
+Quando uma função é chamada em C, o sistema precisa armazenar informações importantes para garantir que a função seja executada e o programa continue a execução corretamente de onde parou.
 
 ---
 
@@ -64,7 +99,6 @@ Essas informações são armazenadas em um registro de ativação, cujo o endere
 ---
 
 ```c
-
 struct activation_record {
   // parâmetros da função
   int param1;
@@ -106,8 +140,8 @@ Em funções recursivas, múltiplos registros de ativação são criados na pilh
 
 - Uma definição recursiva tem duas partes:
 
-1) **Caso base**: lista os elementos básicos que são os blocos de construção de todos os outros elementos do conjunto
-2) **Regras**: permitem a construção de novos objetos a partir de elementos básicos ou objetos já construídos
+1) **Caso base**: lista os elementos básicos que são os blocos de construção de todos os outros elementos do conjunto.
+2) **Regras**: permitem a construção de novos objetos a partir de elementos básicos ou objetos já construídos.
 
 ---
 
@@ -145,7 +179,7 @@ Uma definição recursiva consiste em duas partes. Na primeira parte, chamada de
 
 ---
 
-## Título: Fatorial e definições recursivas ##
+## Fatorial e definições recursivas ##
 
 - A habilidade de decompor um problema em subproblemas mais simples do mesmo tipo às vezes é uma verdadeira benção.
 - Definições recursivas são frequentemente usadas para definir funções e sequências de números.
@@ -234,7 +268,7 @@ Os primeiros números da sequência de Fibonacci são:
 
 ## Consolidando o conceito ##
 
-A recursão ocorre quando uma função chama a si mesma diretamente ou indiretamente. Uma função recursiva geralmente possui duas partes principais: o caso base e o caso recursivo. 
+A recursão ocorre quando uma função chama a si mesma diretamente ou indiretamente. Uma função recursiva geralmente possui duas partes principais: o caso base e o caso recursivo.
 
 - O caso base define as condições em que a função retorna um valor diretamente, sem fazer chamadas recursivas.
 
@@ -258,7 +292,7 @@ O caso base é a condição que define quando a função recursiva deve parar de
 
 O caso recursivo define como a função chama a si mesma, geralmente com o objetivo de reduzir o problema a um subproblema menor. A solução do subproblema menor é usada para construir a solução do problema original.
 
-* A sequência de Fibonacci começa com os números 0 e 1 e, em seguida, cada número subsequente é a soma dos dois números anteriores, essa soma que é o caso recursimv. As chamadas sucessivas, acabam **reduzindo o problema em um subproblema menor**.
+- A sequência de Fibonacci começa com os números 0 e 1 e, em seguida, cada número subsequente é a soma dos dois números anteriores, essa soma que é o caso recursimv. As chamadas sucessivas, acabam **reduzindo o problema em um subproblema menor**.
 
 ---
 
@@ -266,9 +300,9 @@ O caso recursivo define como a função chama a si mesma, geralmente com o objet
 
 A programação dinâmica pode ser aplicada quando um problema possui as seguintes características:
 
-* Sobreposição de subproblemas: O problema pode ser dividido em subproblemas menores e a solução do problema original pode ser obtida a partir das soluções desses subproblemas. Além disso, esses subproblemas menores são resolvidos várias vezes, o que leva a cálculos redundantes.
+- Sobreposição de subproblemas: O problema pode ser dividido em subproblemas menores e a solução do problema original pode ser obtida a partir das soluções desses subproblemas. Além disso, esses subproblemas menores são resolvidos várias vezes, o que leva a cálculos redundantes.
 
-* Subestrutura ótima: A solução ótima do problema original pode ser construída a partir das soluções ótimas dos subproblemas.
+- Subestrutura ótima: A solução ótima do problema original pode ser construída a partir das soluções ótimas dos subproblemas.
 
 ---
 
@@ -276,21 +310,37 @@ A programação dinâmica pode ser aplicada quando um problema possui as seguint
 
 A programação dinâmica utiliza duas abordagens principais para resolver problemas:
 
-**Abordagem de memoização** (top-down): Nesta abordagem, a solução do problema é construída de cima para baixo, começando com o problema original e dividindo-o em subproblemas menores. Os resultados dos subproblemas são armazenados em uma tabela (ou estrutura de dados similar) para evitar cálculos redundantes. Quando um subproblema é resolvido pela primeira vez, o resultado é armazenado na tabela. Se o mesmo subproblema for encontrado novamente, o resultado armazenado é utilizado em vez de resolver o subproblema novamente.
+---
+
+#### Abordagem de memoização ####
+
+- (top-down): Nesta abordagem, a solução do problema é construída de cima para baixo, começando com o problema original e dividindo-o em subproblemas menores.
+
+- Os resultados dos subproblemas são armazenados em uma tabela (ou estrutura de dados similar) para evitar cálculos redundantes. Quando um subproblema é resolvido pela primeira vez, o resultado é armazenado na tabela.
+
+- Se o mesmo subproblema for encontrado novamente, o resultado armazenado é utilizado em vez de resolver o subproblema novamente.
 
 ---
 
-**Abordagem de programação dinâmica bottom-up (também chamada de abordagem tabulação)**: Nesta abordagem, a solução do problema é construída de baixo para cima, começando com os subproblemas menores e combinando suas soluções para resolver problemas maiores. A tabela é preenchida em uma ordem específica, de forma que os resultados dos subproblemas estejam disponíveis antes de serem necessários para resolver problemas maiores. Isso elimina a necessidade de chamadas recursivas e reduz a redundância de cálculos.
+#### Abordagem de programação dinâmica bottom-up ####
+
+- (também chamada de abordagem tabulação) Nesta abordagem, a solução do problema é construída de baixo para cima, começando com os subproblemas menores e combinando suas soluções para resolver problemas maiores.
+- A tabela é preenchida em uma ordem específica, de forma que os resultados dos subproblemas estejam disponíveis antes de serem necessários para resolver problemas maiores.
+- Isso elimina a necessidade de chamadas recursivas e reduz a redundância de cálculos.
 
 ---
 
 ### Comparação entre as abordagens ###
 
-Ambas as abordagens, memoização (top-down) e tabulação (bottom-up), têm suas vantagens e desvantagens. A abordagem de memoização tende a ser mais intuitiva, pois segue a estrutura natural do problema e pode ser facilmente implementada adicionando uma estrutura de armazenamento (como um dicionário ou matriz) a um algoritmo recursivo existente. No entanto, a memoização ainda usa a recursão e, portanto, pode levar a um maior consumo de memória devido à pilha de chamadas recursivas.
+Ambas as abordagens, memoização (top-down) e tabulação (bottom-up), têm suas vantagens e desvantagens.
+
+- A abordagem de memoização tende a ser mais intuitiva, pois segue a estrutura natural do problema e pode ser facilmente implementada adicionando uma estrutura de armazenamento (como um dicionário ou matriz) a um algoritmo recursivo existente. No entanto, a memoização ainda usa a recursão e, portanto, pode levar a um maior consumo de memória devido à pilha de chamadas recursivas.
 
 ---
 
-A abordagem de tabulação é geralmente mais eficiente em termos de tempo e espaço, pois elimina a necessidade de chamadas recursivas e calcula apenas os subproblemas que são estritamente necessários para resolver o problema original. No entanto, a tabulação pode ser menos intuitiva e requer a identificação de uma ordem específica para resolver os subproblemas.
+- A abordagem de tabulação é geralmente mais eficiente em termos de tempo e espaço, pois elimina a necessidade de chamadas recursivas e calcula apenas os subproblemas que são estritamente necessários para resolver o problema original.
+
+- No entanto, a tabulação pode ser menos intuitiva e requer a identificação de uma ordem específica para resolver os subproblemas.
 
 ---
 

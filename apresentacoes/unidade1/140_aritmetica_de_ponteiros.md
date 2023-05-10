@@ -2,15 +2,18 @@
 marp: true
 author: carlos.quintella@uva.br
 paginate: true
+backgroundColor: white
 theme: gaia
 ---
 
 <!-- _class: lead -->
 
-
 # Aritmética de Ponteiros #
 
-Professor: Carlos Alvaro Quintella
+![UVA 50% bg left:20%](https://uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
+
+- Professor: Carlos Alvaro Quintella
+- Revisão: 10/05/2023
 
 ---
 

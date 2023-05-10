@@ -2,6 +2,7 @@
 marp: true
 author: carlos.quintella@uva.br
 paginate: true
+backgroundColor: white
 theme: gaia
 ---
 
