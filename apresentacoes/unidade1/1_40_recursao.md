@@ -13,29 +13,153 @@ Professor: Carlos Alvaro Quintella
 
 ---
 
-## Calculo de Fatorial ##
+## Como funciona a chamada de funções ##
 
-Fatorial é uma operação matemática aplicada a um número inteiro não negativo, representada pelo símbolo "!" (ponto de exclamação). O fatorial de um número n é o produto de todos os números inteiros positivos de 1 até n. Em outras palavras, é a multiplicação de todos os números inteiros entre 1 e n, inclusive.
-
----
-
-A definição formal do fatorial é:
-
-````math
-n! = n * (n - 1) * (n - 2) * ... * 3 * 2 * 1
-````
-
-Além disso, por convenção, o fatorial de 0 é definido como 1:
-
-````math
-0! = 1
-````
-
-O conceito de fatorial é frequentemente usado em combinações e permutações na teoria da probabilidade e estatística, computação, bem como em análise combinatória e na solução de equações diferenciais.
+Quando uma função é chamada em C, o sistema precisa armazenar informações importantes para garantir que a função seja executada e o programa continue a execução corretamente de onde parou.
 
 ---
 
-Faça um programa que calcule o fatorial de um número digitado pelo usuário...
+### Armazenando informações da chamada ###
+
+Informações que são armazenadas:
+
+- Os parâmetros passados para a função
+- O endereço de retorno, indicando onde a execução do programa deve ser retomada após a função terminar
+
+- A posição atual do registro de ativação da função chamadora, chamada de "link dinâmico"
+- Espaço de memória para as variáveis locais da função
+
+---
+
+### Registro de Ativação ###
+
+Essas informações são armazenadas em um registro de ativação, cujo o endereço é criado no topo da pilha de execução quando a função é chamada.
+
+- O registro de ativação é alocado dinamicamente e armazena todas as informações necessárias para executar a função corretamente.
+
+---
+
+```c
+struct activation_record {
+  // parâmetros da função
+  int param1;
+  double param2;
+  
+  // variáveis locais da função
+  int local1;
+  char local2[10];
+  
+  // endereço de retorno
+  void *return_address;
+  
+  // dynamic link
+  struct activation_record *dynamic_link;
+};
+```
+
+_Nota_: O formato do registro de ativação depende da verdade da plataforma.
+
+---
+
+Quando a função termina, a pilha é "desempilhada" e o registro de ativação é desalocado. O endereço de retorno é então usado para retomar a execução do programa na posição correta.
+
+---
+
+Em funções recursivas, múltiplos registros de ativação são criados na pilha de execução, cada um correspondente a uma chamada da função. À medida que as chamadas recursivas são resolvidas, a pilha é "desempilhada" e os registros de ativação são desalocados na ordem inversa em que foram criados.
+
+---
+
+## Definições recursivas e conjuntos infinitos ##
+
+- Uma regra básica para definir novos objetos é que a definição deve conter apenas termos já definidos ou óbvios
+- Uma definição que contém o próprio objeto é um círculo vicioso e uma violação dessa regra
+- No entanto, existem conceitos de programação que se definem a si mesmos sem violar a regra
+
+---
+
+- Essas definições são chamadas de definições recursivas e são usadas principalmente para definir conjuntos infinitos
+
+- Uma definição recursiva tem duas partes:
+
+1) **Caso base**: lista os elementos básicos que são os blocos de construção de todos os outros elementos do conjunto
+2) **Regras**: permitem a construção de novos objetos a partir de elementos básicos ou objetos já construídos
+
+---
+
+_Nota_: O caso base é o ponto em que a função recursiva para de chamar a si mesma e retorna um valor para a chamada anterior. Na maioria dos casos, o caso base é uma condição simples que pode ser verificada em cada chamada recursiva. Quando essa condição é satisfeita, a função recursiva retorna um valor sem chamar a si mesma novamente.
+
+---
+
+- Essas regras são aplicadas repetidamente para gerar novos objetos
+
+- Um exemplo de definição recursiva é a construção do conjunto de números naturais:
+
+```math
+    0 ∈ N;
+    se n ∈ N, então (n + 1) ∈ N;
+    não há outros objetos no conjunto N.
+```
+
+- Nesse caso, dar uma lista completa de elementos é impossível para conjuntos infinitos ou grandes, logo, definições recursivas são uma maneira eficiente de definir esses conjuntos.
+
+<!--
+Uma das regras básicas para definir novos objetos ou conceitos é que a definição deve conter apenas termos que já foram definidos ou que são óbvios.
+
+Portanto, um objeto definido em termos de si mesmo seria uma violação dessa regra - um círculo vicioso. Por outro lado, existem muitos conceitos de programação que se definem a si mesmos. Como se constatou, as restrições formais impostas às definições, como existência e unicidade, são satisfeitas e não ocorre violação das regras. 
+
+Tais definições são chamadas de definições recursivas e são usadas principalmente para definir conjuntos infinitos. Ao definir tal conjunto, dar uma lista completa de elementos é impossível e, para conjuntos finitos grandes, é ineficiente. Portanto, uma maneira mais eficiente deve ser criada para determinar se um objeto pertence a um conjunto.
+
+Uma definição recursiva consiste em duas partes. Na primeira parte, chamada de caso base, os elementos básicos que são os blocos de construção de todos os outros elementos do conjunto são listados. Na segunda parte, são dadas regras que permitem a construção de novos objetos a partir de elementos básicos ou objetos que já foram construídos. Essas regras são aplicadas repetidamente para gerar novos objetos. Por exemplo, para construir o conjunto de números naturais, um elemento básico, 0, é escolhido e a operação de incrementar por 1 é dada como:
+
+    0 ∈ N;
+    se n ∈ N, então (n + 1) ∈ N;
+    não há outros objetos no conjunto N.
+
+- Adam Drozdek
+-->
+
+---
+
+## Título: Fatorial e definições recursivas ##
+
+- A habilidade de decompor um problema em subproblemas mais simples do mesmo tipo às vezes é uma verdadeira benção.
+- Definições recursivas são frequentemente usadas para definir funções e sequências de números.
+
+---
+
+- O conceito de fatorial é frequentemente usado em combinações e permutações na teoria da probabilidade e estatística, computação, bem como em análise combinatória e na solução de equações diferenciais
+
+- A função fatorial é um exemplo comum de uma definição recursiva:
+
+- O fatorial de um número n é o produto de todos os números inteiros positivos de 1 até _n_.
+- A definição formal do fatorial é:
+
+```math
+ n! = n * (n - 1) * (n - 2) * ... * 3 * 2 * 1
+ ```
+
+- Ainda, por convenção, o fatorial de 0 é definido como 1: 0! = 1.
+
+---
+
+## Cálculo de fatorial usando definição recursiva #
+
+A definição recursiva do fatorial é:
+
+- Caso base: 0! = 1
+- Caso recursivo: n! = n * (n - 1)!
+
+A definição recursiva pode ser usada para calcular o fatorial de números grandes de maneira eficiente, por exemplo:
+
+```math
+10! = 10 x 9! = 10 x 9 x 8! = 10 x 9 x 8 x 7! = ... = 10 x 9 x 8 x 7 x 6 x 5 x 4 x 3 x 2 x 1 = 3628800
+
+O cálculo recursivo para 5! seria: 5! = 5 * 4! = 5 * 4 * 3! = 5 * 4 * 3 * 2! = 5 * 4 * 3 * 2 * 1! = 120
+```
+
+---
+
+Caso 1: Faça um programa que calcule o fatorial de um número digitado pelo usuário ...
 
 ---
 
