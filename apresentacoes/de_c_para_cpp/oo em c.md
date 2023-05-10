@@ -21,6 +21,8 @@ theme: gaia
 * Promove reutilização e modularidade de código
 * Princípios fundamentais: encapsulamento, herança, polimorfismo e abstração
 
+[Video](https://www.youtube.com/watch?v=NFMeZls5DQk)
+
 <!--> A orientação a objetos é um paradigma de programação que utiliza objetos e classes para representar e organizar os dados e as funcionalidades de um programa. <!-->
 
 ---
