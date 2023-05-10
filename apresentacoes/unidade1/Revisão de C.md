@@ -1,6 +1,16 @@
 ---
 marp: true
+author: carlos.quintella@uva.br
+background: white
+paginate: true
+footer: Estrutura de Dados
+theme: gaia
 ---
+
+<!-- _class: lead -->
+![UVA 50% bg left:20%](https://uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
+
+RASCUNHO
 
 # Tipos Básicos em C++
 
@@ -87,44 +97,31 @@ Tipos ponteiro em C++ são usados para representar endereços de memória. Eles 
 ## Conclusão
 Os tipos básicos em C++ são blocos essenciais para programar em C++. Ao entender esses tipos e como eles são usados, os programadores podem escrever um código mais eficiente e eficaz.
 
+---
 
-Introduction: C++ is a statically-typed programming language, which means that variables must have a specific type assigned to them at compile time. C++ provides a variety of basic types that can be used to define variables and functions.
+## Tipos de variáveis no C++ ##
 
-    Boolean type: The boolean type in C++ is used to represent logical values, such as true and false. It has a size of 1 byte and can be either true (non-zero) or false (zero).
+- C++ é uma linguagem de programação com tipagem estática, o que significa que as variáveis devem ter um tipo específico atribuído a elas em tempo de compilação
 
-    Character type: The character type in C++ is used to represent single characters, such as letters, digits, and punctuation marks. It has a size of 1 byte and can store 256 possible values.
+- Fornece uma variedade de tipos básicos que podem ser usados para definir variáveis e funções.
 
-    Integer types: C++ provides several integer types, including short, int, long, and long long. These types are used to represent whole numbers, both positive and negative. The size of an integer type depends on the platform and the compiler, but is typically either 2, 4, or 8 bytes.
+---
 
-    Floating-point types: C++ provides two floating-point types, float and double. These types are used to represent real numbers with varying degrees of precision and accuracy. The size of a floating-point type depends on the platform and the compiler, but is typically either 4 or 8 bytes.
+- Tipo booleano: O tipo booleano no C++ é usado para representar valores lógicos, como verdadeiro e falso. Ele tem um tamanho de 1 byte e pode ser verdadeiro (diferente de zero) ou falso (zero).
 
-    Void type: The void type in C++ represents the absence of a type. It is typically used to define functions that do not return a value.
+- Tipo caractere: O tipo caractere no C++ é usado para representar caracteres individuais, como letras, dígitos e sinais de pontuação. Ele tem um tamanho de 1 byte e pode armazenar 256 valores possíveis.
 
-    Enumerated types: Enumerated types in C++ are used to define a set of named constants. Each constant has an associated integer value, which can be used to represent the constant.
+- Tipos inteiros: O C++ fornece vários tipos inteiros, incluindo short, int, long e long long. Esses tipos são usados para representar números inteiros, tanto positivos quanto negativos. O tamanho de um tipo inteiro depende da plataforma e do compilador, mas normalmente é 2, 4 ou 8 bytes.
 
-    Pointer types: Pointer types in C++ are used to represent memory addresses. They are used to manipulate and access data stored in memory.
+---
 
-    Conclusion: The basic types in C++ are essential building blocks for programming in C++. By understanding these types and how they are used, programmers can write more efficient and effective code.
+- Tipos de ponto flutuante: O C++ fornece dois tipos de ponto flutuante, float e double. Esses tipos são usados para representar números reais com diferentes graus de precisão e acurácia. O tamanho de um tipo de ponto flutuante depende da plataforma e do compilador, mas normalmente é 4 ou 8 bytes.
 
-In C++, the basic types are used to define variables and functions. They are typically used to store values in memory, perform arithmetic and logical operations, and control program flow. The basic types in C++ include:
+- Tipo void: O tipo void no C++ representa a ausência de um tipo. Geralmente é usado para definir funções que não retornam um valor.
 
-1. Boolean: This type represents boolean values, which can be either true or false.
+- Tipos de ponteiros: Tipos de ponteiros no C++ são usados para representar endereços de memória. Eles são usados para manipular e acessar dados armazenados na memória.
 
-2. Character: This type represents single characters, such as letters, digits, and punctuation marks.
-
-3. Integer: This type represents whole numbers, both positive and negative, with varying sizes depending on the number of bits used to represent them.
-
-4. Floating-point: This type represents real numbers, with varying degrees of precision and accuracy depending on the number of bits used to represent them.
-
-5. Double precision: This type represents double precision floating-point numbers, with greater precision and accuracy than the regular floating-point type.
-
-6. Void: This type represents an absence of type, and is typically used to define functions that do not return a value.
-
-7. Enumeration: This type represents a list of named constants, with each constant having a unique integer value.
-
-8. Pointer: This type represents a memory address, which can be used to manipulate and access data stored in memory.
-
-In C, the basic types are similar to those in C++, but with some differences in their sizes. The sizes of the basic types in C and C++ can vary depending on the implementation and the platform being used. However, the following table provides a general comparison of the sizes of the basic types in C and C++:
+---
 
 | Type         | Size in C  | Size in C++ |
 |--------------|------------|-------------|
@@ -134,27 +131,23 @@ In C, the basic types are similar to those in C++, but with some differences in 
 | Floating-point | 4 or 8 bytes | 4 or 8 bytes |
 | Double precision | Not defined | 8 bytes |
 | Void         | Not defined | Not defined |
-| Enumeration  | 2 or 4 bytes | 2 or 4 bytes |
 | Pointer      | 2 or 4 bytes | 2, 4 or 8 bytes |
 
 ---
 
-Note: that the sizes of the basic types in C and C++ can also be affected by the compiler options and the target platform.
-The sizes of the basic types in C and C++ can vary depending on the compiler and the target platform being used. Different compilers may implement the basic types with different sizes, depending on their optimization goals, the underlying hardware architecture, and other factors.
+## Tamanho dos tipos em C ##
 
-For example, an integer in C or C++ can be represented with 2, 4, or 8 bytes, depending on the compiler and the target platform. A compiler may choose to use a smaller size for an integer type if it determines that the program's performance can be improved without sacrificing correctness or compatibility.
+- Os tamanhos dos tipos básicos em C e C++ podem ser afetados pelas opções do compilador e pela plataforma-alvo. Diferentes compiladores podem implementar os tipos básicos com diferentes tamanhos, dependendo de seus objetivos de otimização, da arquitetura de hardware subjacente e de outros fatores. Em geral o tamanho da palavra do computador determina o tamnho do int, para computadores de 16 bits, é 2 bytes, já os de 32 ou 64 bits é 4 bytes, pode ser até 8 bytes.
 
-Similarly, the floating-point types in C and C++ can also vary in size, depending on the compiler and the target platform. A compiler may choose to use a smaller size for a floating-point type if it determines that the program's performance can be improved without sacrificing precision or accuracy.
-
-Therefore, it is important to be aware that the sizes of the basic types in C and C++ can be affected by the compiler options and the target platform, and to write code that is compatible with different compilers and platforms. This can involve using platform-independent data types, such as int32_t and float64_t, or using platform-specific features, such as conditional compilation directives, to handle differences in the sizes of the basic types.
+- Da mesma forma, os tipos de ponto flutuante em C e C++ também podem variar em tamanho, dependendo do compilador e da plataforma-alvo. Um compilador pode escolher usar um tamanho menor para um tipo de ponto flutuante se determinar que o desempenho do programa pode ser melhorado sem sacrificar a precisão ou acurácia.
 
 ---
 
-Note: In C and C++, `void` is a keyword that represents the absence of a type, and is often used to indicate that a function returns no value or that a pointer points to no specific type. It is not defined as a data type because it does not represent a value that can be stored or manipulated.
+## void ##
 
-When we declare a function to return `void`, we are indicating that the function does not return a value, and any attempt to use the value returned by the function will result in a compilation error. Similarly, when we declare a pointer of type `void*`, we are indicating that the pointer can point to any data type, but we cannot directly dereference the pointer or manipulate the data pointed to without first casting it to a specific data type.
+Em C e C++, `void` é uma palavra-chave que representa a ausência de um tipo e geralmente é usada para indicar que uma função não retorna valor ou que um ponteiro aponta para um tipo não específico. Não é definido como um tipo de dado porque não representa um valor que possa ser armazenado ou manipulado.
 
-In summary, `void` is a keyword in C and C++ that represents the absence of a type and is used to indicate that a function returns no value or that a pointer points to no specific type. It is not defined as a data type because it does not represent a value that can be stored or manipulated directly.
+Quando declaramos uma função com retorno `void`, estamos indicando que a função não retorna um valor, e qualquer tentativa de usar o valor retornado pela função resultará em um erro de compilação. Da mesma forma, quando declaramos um ponteiro do tipo `void*`, estamos indicando que o ponteiro pode apontar para qualquer tipo de dado, mas não podemos desreferenciar diretamente o ponteiro ou manipular os dados apontados sem antes fazer um casting para um tipo de dado específico.
 
 ---
 
