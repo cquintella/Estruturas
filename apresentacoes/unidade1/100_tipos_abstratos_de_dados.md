@@ -1,23 +1,20 @@
 ---
 marp: true
 author: carlos.quintella@uva.br
-
+background: white
 paginate: true
-theme: default
-style: |
-  video::-webkit-media-controls {
-    will-change: transform;
-  }
+footer: Estrutura de Dados
+theme: gaia
 ---
 
 <!-- _class: lead -->
+![UVA 50% bg left:20%](https://scontent.fstu1-1.fna.fbcdn.net/v/t1.18169-9/12038391_10153722080706340_7570391622888322838_n.png)
 
 # TAD - Tipo Abstrato de Dados #
 
 Carlos Alvaro Quintella
 08/05/2023
 
-![UVA 50% bg left:20%](https://scontent.fstu1-1.fna.fbcdn.net/v/t1.18169-9/12038391_10153722080706340_7570391622888322838_n.png?_nc_cat=106&ccb=1-7&_nc_sid=174925&_nc_ohc=BefZdJ6r1a4AX-MadqL&_nc_oc=AQkw4Umxiy3CzJ0PEn0rZvyLpQua30GzJj9Fx1LH37qGS545w2GlcEKoUJBjndWHRxQ&_nc_ht=scontent.fstu1-1.fna&oh=00_AfD5qau0zNokMGdT_pEr0cwiAk9TbW2bYxm27PEXPfBhGQ&oe=6480A5AE)
 
 ---
 
