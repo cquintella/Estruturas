@@ -7,15 +7,36 @@ paginate: true
 
 <!-- _class: lead -->
 
-# Recursão #
+# Programação Dinâmica e Recursão #
 
 Professor: Carlos Alvaro Quintella
+
+---
+
+## Programação Dinamica ##
+
+A programação dinâmica é uma técnica de resolução de problemas computacionais que consiste em dividir um problema em subproblemas menores e resolvê-los apenas uma vez, armazenando suas soluções para evitar a repetição desnecessária do cálculo. É útil em problemas com sobreposição de subproblemas e é amplamente utilizada em áreas como inteligência artificial, otimização, engenharia de software e finanças. É aplicável a uma ampla variedade de problemas, como encontrar o caminho mais curto em um grafo ou calcular a sequência de Fibonacci.
+
+---
+
+A programação dinâmica pode ser dividida em dois tipos principais: programação dinâmica clássica e programação dinâmica baseada em memória. 
+O primeiro é utilizado em problemas que precisam otimizar uma função objetivo sujeita a algumas restrições, quebrando o problema em subproblemas menores e mais simples resolvidos de forma recursiva. Já o segundo tipo é usado para resolver problemas de otimização, encontrando a melhor sequência de decisões a serem tomadas, utilizando uma tabela ou matriz para armazenar soluções para subproblemas que são reutilizados para encontrar a solução para o problema original.
 
 ---
 
 ## Como funciona a chamada de funções ##
 
 Quando uma função é chamada em C, o sistema precisa armazenar informações importantes para garantir que a função seja executada e o programa continue a execução corretamente de onde parou.
+
+---
+
+### Divisão da PD ##
+
+A programação dinâmica pode ser dividida em dois tipos principais:
+
+    Programação dinâmica clássica: Este tipo de programação dinâmica é aplicado em problemas onde é necessário otimizar uma função objetivo sujeita a algumas restrições. Ele quebra o problema em subproblemas menores e mais simples que são resolvidos de forma recursiva. A solução final é obtida combinando as soluções dos subproblemas. Exemplos de problemas clássicos de programação dinâmica incluem a Mochila 0/1, o Problema do Caixeiro Viajante e o Problema da Sequência Comum Mais Longa.
+
+    Programação dinâmica baseada em memória: Este tipo de programação dinâmica é usado para resolver problemas de otimização que envolvem encontrar a melhor sequência de decisões a serem tomadas. Em vez de dividir o problema em subproblemas menores, este método usa uma tabela ou matriz para armazenar soluções para subproblemas que são reutilizados para encontrar a solução para o problema original. Exemplos de problemas baseados em memória incluem a Busca em Profundidade, a Busca em Largura e o Algoritmo de Dijkstra para encontrar o caminho mais curto em um grafo ponderado.
 
 ---
 
@@ -40,6 +61,7 @@ Essas informações são armazenadas em um registro de ativação, cujo o endere
 ---
 
 ```c
+
 struct activation_record {
   // parâmetros da função
   int param1;
@@ -207,32 +229,17 @@ Os primeiros números da sequência de Fibonacci são:
 
 ---
 
-## Conceito de Recursão ##
+## Consolidando o conceito ##
 
-A recursão ocorre quando uma função chama a si mesma diretamente ou indiretamente. Uma função recursiva geralmente possui duas partes principais: o caso base e o caso recursivo. O caso base define as condições em que a função retorna um valor diretamente, sem fazer chamadas recursivas. O caso recursivo define como a função chama a si mesma, reduzindo o problema a um subproblema menor.
+A recursão ocorre quando uma função chama a si mesma diretamente ou indiretamente. Uma função recursiva geralmente possui duas partes principais: o caso base e o caso recursivo. 
 
-* Recursividade é extremamente útil em diversas áreas da computação incluíndo para inteligência artificial.
+- O caso base define as condições em que a função retorna um valor diretamente, sem fazer chamadas recursivas.
 
----
-
-## Exemplo: Fatorial ##
-
-* Quanto é fatorial de 2?
-* Quanto é o fatorial de 4?
-* Quanto é o fatorail de 10?
-* Quanto é o fatorial de 11?
+- O caso recursivo define como a função chama a si mesma, reduzindo o problema a um subproblema menor.
 
 ---
 
-````c
-int fatorial(int n) {
-    if (n == 0) {
-        return 1; // caso base
-    }
-    return n * fatorial(n - 1); // caso recursivo
-}
-
-````
+- Recursividade é extremamente útil em diversas áreas da computação incluíndo para inteligência artificial.
 
 ---
 
@@ -240,42 +247,19 @@ int fatorial(int n) {
 
 O caso base é a condição que define quando a função recursiva deve parar de chamar a si mesma e retornar um valor diretamente. É essencial para evitar loops infinitos de chamadas recursivas e garantir que a função eventualmente termine.
 
-* Para o cálculo do fatorial, o caso base ocorre quando n = 0. Neste caso, a função retorna 1, pois o fatorial de 0 é definido como 1.
+- Para o cálculo do fatorial, o caso base ocorre quando n = 0. Neste caso, a função retorna 1, pois o fatorial de 0 é definido como 1.
 
 ---
+
+### Caso Recursivo ###
 
 O caso recursivo define como a função chama a si mesma, geralmente com o objetivo de reduzir o problema a um subproblema menor. A solução do subproblema menor é usada para construir a solução do problema original.
 
-* A sequência de Fibonacci começa com os números 0 e 1 e, em seguida, cada número subsequente é a soma dos dois números anteriores.
-
-* Para calcular o enésimo número da sequência de Fibonacci, o caso recursivo envolve a soma de duas chamadas recursivas, cada uma **reduzindo o problema em um subproblema menor**.
+* A sequência de Fibonacci começa com os números 0 e 1 e, em seguida, cada número subsequente é a soma dos dois números anteriores, essa soma que é o caso recursimv. As chamadas sucessivas, acabam **reduzindo o problema em um subproblema menor**.
 
 ---
 
-## Sequencia de Fibonacci ##
-
-````c
-
-int fibonacci(int n) {
-    if (n == 0) {
-        return 0; // caso base
-    }
-    if (n == 1) {
-        return 1; // caso base
-    }
-    return fibonacci(n - 1) + fibonacci(n - 2); // caso recursivo
-}
-````
-
----
-
-## Programacao Dinâmica ##
-
-Programação dinâmica é uma técnica de otimização usada em ciência da computação e matemática para resolver problemas que apresentam uma estrutura de sobreposição de subproblemas e subestrutura ótima. Ela é particularmente útil para resolver problemas de otimização e problemas que podem ser divididos em subproblemas menores e independentes.
-
----
-
-### Características dos Problemas para aplicação ###
+## Características dos Problemas para aplicação ##
 
 A programação dinâmica pode ser aplicada quando um problema possui as seguintes características:
 
