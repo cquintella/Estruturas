@@ -31,7 +31,20 @@ Cada conjunto de dados pede uma estrutura de organização diferente. Algumas fa
 
 ---
 
-Ao longo do curso estaremos navegando por um verdadeiro zoológico de diferentes tipos de estruturas. Estaremos também visitando problemas clássicos recorrentes em ciência da computação que precisam da melhor estrutura de dados para serem resolvidos de forma eficiente. Também estaremos vendo novidades e tendências tecnológicas relacionadas a essa disciplina.
+Ao longo do curso estaremos navegando por um verdadeiro zoológico de diferentes tipos de estruturas, como:
+- Pilha (Stack): uma estrutura de dados que permite a inserção e remoção de elementos somente no topo.
+- Fila (Queue): uma estrutura de dados que permite a inserção de elementos no final e a remoção de elementos no início.
+- Lista (List): uma estrutura de dados que permite a inserção, remoção e acesso a elementos em qualquer posição.
+- Árvore (Tree): uma estrutura de dados que permite a organização hierárquica dos elementos, com um nó raiz e um conjunto de nós filhos.
+- Grafo (Graph): uma estrutura de dados que permite a modelagem de relações entre objetos, representando um conjunto de vértices e arestas.
+- Tabela de dispersão (Hash table): uma estrutura de dados que permite a recuperação rápida de valores a partir de chaves, usando uma função de dispersão para mapear as chaves para índices na tabela.
+---
+
+Além disso existem outras estrutras que vamos apresentar mas não entrar em detalhes.
+- Mapa (Map): uma estrutura de dados que permite a associação de valores a chaves, permitindo a recuperação rápida de valores a partir das chaves.
+- Conjunto (Set): uma estrutura de dados que permite o armazenamento de elementos únicos sem ordem específica.
+
+Estaremos também visitando problemas clássicos recorrentes em ciência da computação que precisam da melhor estrutura de dados para serem resolvidos de forma eficiente. Também estaremos vendo novidades e tendências tecnológicas relacionadas a essa disciplina.
 
 ---
 
