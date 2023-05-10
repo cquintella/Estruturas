@@ -1,7 +1,7 @@
 
 # Filas #
 
-Filas são uma estrutura de dados linear muito comum e útil, especialmente para estudantes de Ciências da Computação que estão aprendendo sobre diferentes formas de organizar e manipular dados. Uma fila é uma coleção ordenada de elementos na qual um elemento é inserido no final (também conhecido como "parte traseira" ou "cauda" da fila) e removido do início (também conhecido como "frente" ou "cabeça" da fila). Essa propriedade faz com que a fila siga o protocolo FIFO (First In, First Out), ou seja, o primeiro elemento que entra na fila é o primeiro a sair.
+Filas são uma estrutura de dados linear muito comum para organizar e manipular dados. Uma fila é uma coleção ordenada de elementos na qual um elemento é inserido no final (também conhecido como "cauda" da fila) e removido do início (também conhecida como "cabeça" da fila). Essa propriedade faz com que a fila siga o protocolo **FIFO (First In, First Out)**, ou seja, o primeiro elemento que entra na fila é o primeiro a sair.
 
 ---
 
