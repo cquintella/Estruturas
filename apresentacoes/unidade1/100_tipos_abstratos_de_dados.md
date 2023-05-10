@@ -8,7 +8,7 @@ theme: gaia
 ---
 
 <!-- _class: lead -->
-![UVA 50% bg left:20%](https://scontent.fstu1-1.fna.fbcdn.net/v/t1.18169-9/12038391_10153722080706340_7570391622888322838_n.png)
+![UVA 50% bg left:20%](https://uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
 
 # TAD - Tipo Abstrato de Dados #
 
