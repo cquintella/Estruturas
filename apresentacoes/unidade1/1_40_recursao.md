@@ -1,11 +1,14 @@
 ---
 marp: true
-theme: gaia
+author: carlos.quintella@uva.br
+background: white
 paginate: true
-
+footer: Estrutura de Dados
+theme: gaia
 ---
 
 <!-- _class: lead -->
+![UVA 50% bg left:20%](https://uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
 
 # Programação Dinâmica e Recursão #
 
