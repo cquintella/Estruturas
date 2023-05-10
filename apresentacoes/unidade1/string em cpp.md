@@ -1,8 +1,14 @@
 ---
 marp: true
+author: carlos.quintella@uva.br
+background: white
+paginate: true
+footer: Estrutura de Dados
+theme: gaia
 ---
 
-# String #
+<!-- _class: lead -->
+![UVA 50% bg left:20%](https://uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
 
 Professor: Carlos Alvaro Quintella
 
