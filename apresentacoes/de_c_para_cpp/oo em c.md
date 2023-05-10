@@ -1,17 +1,19 @@
 ---
 marp: true
 author: carlos.quintella@uva.br
-backgroundColor: black
+backgroundColor: white
 paginate: true
+footer: Curso de C++
 theme: gaia
 ---
 
-<!-- class: invert -->
 <!-- _class: lead -->
-<!-- _color: white -->
+
 
 # Orientação à objetos em C++ #
 
+- Professor: Carlos Alvaro Quintella
+- Revisão: 10/05/2023
 ---
 
 ## Paradigma da Programação Orientada a Objetos ##
@@ -20,6 +22,9 @@ theme: gaia
 * Representa e organiza dados e funcionalidades
 * Promove reutilização e modularidade de código
 * Princípios fundamentais: encapsulamento, herança, polimorfismo e abstração
+
+- [Platão e Aristóteles](https://www.youtube.com/watch?v=NFMeZls5DQk)
+- [Dicionário do Programador POO](https://www.youtube.com/watch?v=QY0Kdg83orY)
 
 <!--> A orientação a objetos é um paradigma de programação que utiliza objetos e classes para representar e organizar os dados e as funcionalidades de um programa. <!-->
 
