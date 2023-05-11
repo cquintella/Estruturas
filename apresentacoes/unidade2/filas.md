@@ -1,13 +1,31 @@
+---
+marp: true
+author: carlos.quintella@uva.br
+backgroundColor: white
+paginate: true
+footer: Estrutura de Dados
+theme: gaia
+---
+
+<!-- _class: lead -->
 
 # Filas #
+
+- Professor: Carlos Alvaro Quintella
+- Revisão: 10/05/2023
+
+![UVA 70% bg left:20%](https://uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
+
+---
 
 Filas são uma estrutura de dados linear muito comum para organizar e manipular dados. Uma fila é uma coleção ordenada de elementos na qual um elemento é inserido no final (também conhecido como "cauda" da fila) e removido do início (também conhecida como "cabeça" da fila). Essa propriedade faz com que a fila siga o protocolo **FIFO (First In, First Out)**, ou seja, o primeiro elemento que entra na fila é o primeiro a sair.
 
 ---
 
-##  Operações Básicas ##
+## Operações Básicas ##
 
 As operações básicas realizadas em uma fila incluem:
+
 - Enfileirar (enqueue): Adicionar um elemento no final da fila.
 -Desenfileirar (dequeue): Remover o elemento do início da fila e retorná-lo.
 -Ver frente (front): Acessar o elemento no início da fila sem removê-lo.
@@ -17,6 +35,8 @@ As operações básicas realizadas em uma fila incluem:
 ---
 
 As filas podem ser implementadas usando várias estruturas de dados subjacentes, como arrays, listas encadeadas ou até mesmo outras estruturas de dados como pilhas. A escolha da estrutura de dados subjacente pode afetar o desempenho e a complexidade das operações da fila.
+
+---
 
 TAD: Fila
 
