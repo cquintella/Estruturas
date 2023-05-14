@@ -2,6 +2,7 @@
 marp: true
 author: carlos.quintella@uva.br
 paginate: true
+backgroundColor: white
 theme: gaia
 ---
 
@@ -11,6 +12,30 @@ theme: gaia
 # Diferenças entre C e C++ #
 
 Professor: Carlos Alvaro Quintella
+
+---
+
+Um programas C++ tem a seguinte estrutura:
+
+```text
+
+Inclusão de bibliotecas
+
+Definição de namespace
+
+definição de constantes
+
+funções 
+
+int main()
+{
+declaração de variáveis 
+....
+sentenças
+....
+}
+
+```
 
 ---
 
@@ -35,6 +60,18 @@ _O C não possui o mesmo nível de suporte para gerenciamento de memória, o que
 - **Function Overloading**: C++ allows for function overloading, which means that multiple functions can have the same name, but with different parameter lists. C does not support function overloading.
 
 - **Exception Handling**: C++ supports exception handling, which means that runtime errors can be handled in a structured way, allowing for more robust and reliable code. C does not have built-in support for exception handling.
+
+---
+
+## Tipos de arquivo ##
+
+- **Arquivos de código-fonte (source files)**: Os arquivos de código-fonte possuem a extensão .cpp e contêm a implementação real das classes, funções e outros elementos definidos nos arquivos de cabeçalho. Esses arquivos são responsáveis por escrever o código executável e são compilados pelo compilador C++ para gerar o programa final.
+
+- **Arquivos de cabeçalho (header files)**: Os arquivos de cabeçalho têm a extensão .hpp ou .h e são usados para declarar as definições de classes, funções, variáveis e outros elementos que serão utilizados em vários arquivos de código-fonte. Esses arquivos fornecem as interfaces e as declarações dos elementos, permitindo que outros arquivos de código-fonte incluam e usem essas definições. A separação entre a interface (arquivos de cabeçalho) e a implementação (arquivos de código-fonte) ajuda a organizar e modularizar o código.
+
+Além desses dois tipos principais de arquivos, também poemos citar:
+
+- **Arquivos de biblioteca (library files)**: São arquivos que contêm implementações de funções, classes e outros elementos que podem ser usados por vários programas. Esses arquivos são compilados separadamente e podem ser vinculados aos programas durante o processo de compilação para fornecer funcionalidades pré-definidas.
 
 ---
 
@@ -82,7 +119,6 @@ _A biblioteca padrão do C não tem suporte a orientação a objetos e é basead
 
 ---
 
-
 ## Namespaces ##
 
 É uma maneira de organizar e agrupar identificadores (como variáveis, funções e classes) sob um mesmo nome. Eles ajudam a evitar conflitos entre nomes e facilitam a organização do código, especialmente em projetos maiores.
@@ -94,7 +130,6 @@ Imagine que você está trabalhando em um projeto com outras pessoas, e ambos cr
 _No C era comum se colocar um prefixo nas funções, como ocorre ainda no Mac OSX; onde as chamadas de API começam com NS (de Next Step - era a empresa do Steve Jobs que estava desenvolvendo o OS que virou o Mac OSX)_.
 
 ---
-
 
 ### #pragma once ###
 
@@ -562,3 +597,5 @@ int main() {
 ## Links ##
 
 [Vectors C++](https://www.youtube.com/watch?v=TaySu61K6dI&list=PLYnrabpSIM--J2A1gsBmgjHfp9g9rb7vu&index=5)
+
+[Notas de Aula UFPR](https://www.inf.ufpr.br/ci208/NotasAula.pdf)

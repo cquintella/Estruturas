@@ -7,14 +7,14 @@ theme: gaia
 
 <!-- _class: lead -->
 
-# Introdução à Linguagem C++
+# Introdução à Linguagem C++ #
 
 Professor: Carlos Alvaro Quintella
 5/6/2023
 
 ---
 
-## O que é C++?
+## O que é C++? ##
 
 - Linguagem de programação de alto nível
 - Criada com base na linguagem C
@@ -23,7 +23,7 @@ Professor: Carlos Alvaro Quintella
 
 ---
 
-## Hello World em C++
+## Hello World em C++ ##
 
 ```cpp
 #include <iostream>
@@ -40,7 +40,7 @@ int main()
 
 ---
 
-## Tipos de Dados Básicos
+## Tipos de Dados Básicos ##
 
 - `int` - inteiro
 - `float` - ponto flutuante
@@ -50,7 +50,7 @@ int main()
 
 ---
 
-## Estruturas de Controle de Fluxo
+## Estruturas de Controle de Fluxo ##
 
 - `if`/`else` - estrutura condicional
 - `for` - laço de repetição com número fixo de iterações
@@ -59,11 +59,11 @@ int main()
 
 ---
 
-## Comportamentos do for em C++
+## Comportamentos do for em C++ ##
 
 O laço `for` é uma das estruturas mais utilizadas em C++ e pode apresentar diferentes comportamentos.
 
-### Comportamento padrão
+### Comportamento padrão ###
 
 O comportamento padrão do `for` é repetir uma sequência de comandos um número específico de vezes.
 
@@ -93,7 +93,7 @@ Nota: Diferente do C, o C++ tem a abrigatóriedade de definir o tipo de dado. Po
 
 ---
 
-## Funções
+## Funções ##
 
 - Bloco de código com um nome
 - Pode receber argumentos e retornar um valor
@@ -196,8 +196,6 @@ O C++ precisa continuar a provar seu valor em áreas como desenvolvimento de sis
 
 ---
 
-
-
 [TIOBE](https://www.tiobe.com/tiobe-index/cplusplus/)
 [Ranking](https://distantjob.com/blog/programming-languages-rank/)
 
@@ -214,4 +212,10 @@ O C++ precisa continuar a provar seu valor em áreas como desenvolvimento de sis
 ---
 
 - Para continuar relevante no futuro, o C++ precisa evoluir para atender às necessidades dos desenvolvedores modernos, enquanto mantém suas vantagens em desempenho e controle
-- A complexidade da linguagem também precisa ser abordada para torná-la mais acessível a novos desenvolvedores
+- A complexidade da linguagem também precisa ser abordada para torná-la mais acessível a novos desenvolvedores.
+
+---
+
+## Links ##
+
+[Referencia do C++](https://en.cppreference.com/w/Main_Page)
