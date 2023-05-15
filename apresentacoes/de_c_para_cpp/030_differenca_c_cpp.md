@@ -8,10 +8,12 @@ theme: gaia
 
 <!-- _class: lead -->
 
-
 # Diferenças entre C e C++ #
 
-Professor: Carlos Alvaro Quintella
+- Professor: Carlos Alvaro Quintella
+- Revisão: 10/05/2023
+
+![bg 80% left:30%](https://www.uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
 
 ---
 

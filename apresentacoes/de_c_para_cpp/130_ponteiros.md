@@ -1,1 +1,0 @@
-![bg](https://cdnb.artstation.com/p/assets/images/images/043/896/937/4k/neil-burn-warehouse-06-new-signature-sized.jpg?1638542908)

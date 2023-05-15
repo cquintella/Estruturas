@@ -119,6 +119,48 @@ Em C++, os tipos de dados compostos são aqueles que são formados a partir de o
 
 ---
 
+### tipos adicionados posteriormente ##
+
+- char16_t (C++11): Tipo de caractere para armazenamento de caracteres Unicode de 16 bits em formato UTF-16.
+
+- char32_t (C++11): Tipo de caractere para armazenamento de caracteres Unicode de 32 bits em formato UTF-32.
+
+- char8_t (C++20): Tipo de caractere para armazenamento de caracteres Unicode de 8 bits em formato UTF-8. Foi adicionado no padrão C++20 para corrigir o problema de que os literais de string UTF-8 eram do tipo const char[] e não const char8_t[].
+
+---
+
+- **std::string_view (C++17)**: É um objeto que pode referenciar uma sequência contígua de caracteres. Em comparação com `std::string`, ele não possui uma cópia dos dados, mas simplesmente aponta para eles. Isso pode levar a melhorias de desempenho, uma vez que evita cópias desnecessárias.
+
+- **std::optional (C++17)**: Este é um tipo de contêiner que pode ou não conter um valor de algum tipo. Isso é útil quando um valor pode ou não estar presente, e você precisa distinguir claramente entre os dois casos.
+
+---
+
+- **std::variant (C++17)**: Este é um tipo de união segura ao tipo. Ele pode conter um valor de vários tipos possíveis, mas ao contrário de uma união, ele mantém o controle de qual tipo ele está atualmente armazenando.
+
+- **std::any (C++17)**: Este é um tipo que pode armazenar qualquer tipo de valor. Ele fornece uma maneira flexível e segura de armazenar e manipular qualquer tipo de dado, sem a necessidade de saber o tipo exato em tempo de compilação.
+
+- **std::filesystem::path (C++17)**: É uma classe que representa um caminho no sistema de arquivos. Ele é usado em conjunto com outras classes e funções em `std::filesystem` para manipular arquivos e diretórios.
+
+- **std::span (C++20)**: Este é um tipo de objeto que pode referenciar uma sequência contígua de objetos. Ele é semelhante ao `std::string_view`, mas para qualquer tipo de objeto, não apenas caracteres.
+
+---
+
+- **std::format (C++20)**: Embora não seja um tipo de dados, `std::format` é uma nova adição significativa à biblioteca padrão que permite a formatação de strings de maneira muito mais legível e segura do que os métodos tradicionais.
+
+---
+
+### Smart Pointers ###
+
+Existem três tipos principais de smart pointers na biblioteca padrão do C++:
+
+- std::unique_ptr: Este é um smart pointer que possui e gerencia outro objeto por meio de um ponteiro e o desaloca quando o std::unique_ptr vai para fora do escopo. Como o nome sugere, um std::unique_ptr não pode ser copiado, o que significa que ele "possui" exclusivamente o objeto ao qual aponta. O std::unique_ptr é útil quando você tem um objeto que é possuído por exatamente um proprietário.
+
+- std::shared_ptr: Este é um smart pointer que retém a propriedade compartilhada de um objeto por meio de um ponteiro. Vários std::shared_ptr podem possuir o mesmo objeto, e o objeto só é desalocado quando o último std::shared_ptr que o possui é destruído ou redefinido. O std::shared_ptr é útil quando você quer que vários proprietários possam compartilhar o mesmo objeto.
+
+- std::weak_ptr: Este é um smart pointer que mantém uma referência não-proprietária ("fraca") para um objeto que é gerido por std::shared_ptr. Ele deve ser convertido para std::shared_ptr para acessar o objeto. std::weak_ptr é usado para quebrar referências cíclicas que poderiam ser criadas com std::shared_ptr.
+
+---
+
 ## Estruturas de Controle de Fluxo ##
 
 - `if`/`if-else`/`if-else-if` - estrutura condicional

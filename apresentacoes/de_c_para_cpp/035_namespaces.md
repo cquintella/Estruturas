@@ -1,9 +1,19 @@
 ---
 marp: true
+author: carlos.quintella@uva.br
+backgroundColor: white
+paginate: true
+theme: gaia
 ---
 
+<!-- _class: lead -->
 
 # Como usar namespaces no C++ #
+
+- Professor: Carlos Alvaro Quintella
+- Revisão: 10/05/2023
+
+![bg 80% left:30%](https://www.uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
 
 ---
 
@@ -73,15 +83,15 @@ Namespaces são uma parte importante da organização e estruturação do códig
 
 ---
 
-### #pragma once ###
+### pragma once ###
 
-* Diretiva do pré-processador utilizada para evitar múltiplas inclusões de um mesmo arquivo de cabeçalho em um programa em C ou C++
-* Garante que o arquivo de cabeçalho seja incluído apenas uma vez, mesmo que seja referenciado em diferentes partes do código
-*Substituto da tradicional técnica de proteção de inclusão de arquivos de cabeçalho, que utiliza o ifndef, define e endif
+- Diretiva do pré-processador utilizada para evitar múltiplas inclusões de um mesmo arquivo de cabeçalho em um programa em C ou C++
+- Garante que o arquivo de cabeçalho seja incluído apenas uma vez, mesmo que seja referenciado em diferentes partes do código
+- Substituto da tradicional técnica de proteção de inclusão de arquivos de cabeçalho, que utiliza o ifndef, define e endif
 
 Como utilizar pragma once?
 
-* Adicione a diretiva "#pragma once" na primeira linha do arquivo de cabeçalho, logo após a diretiva #ifndef
+-  Adicione a diretiva "#pragma once" na primeira linha do arquivo de cabeçalho, logo após a diretiva #ifndef
 
 ---
 
@@ -104,12 +114,8 @@ Como utilizar pragma once?
 
 Vantagens de utilizar pragma once
 
-    Maior facilidade e clareza no código
-    Evita erros comuns de digitação ao definir os macros ifndef e define
-    Melhora a legibilidade e a manutenibilidade do código
-    Economiza tempo de compilação em projetos grandes, evitando a recompilação desnecessária de arquivos de cabeçalho já incluídos
+- Maior facilidade e clareza no código
+- Evita erros comuns de digitação ao definir os macros ifndef e define
+-Melhora a legibilidade e a manutenibilidade do código
+-Economiza tempo de compilação em projetos grandes, evitando a recompilação desnecessária de arquivos de cabeçalho já incluídos.
 
-    Conclusão
-
-    Pragma once é uma diretiva do pré-processador que substitui a técnica tradicional de proteção de inclusão de arquivos de cabeçalho
-    Seu uso é recomendado em projetos em C ou C++ para evitar problemas de compilação e melhorar a legibilidade e a manutenibilidade do código.

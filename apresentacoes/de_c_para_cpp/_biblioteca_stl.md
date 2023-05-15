@@ -1,22 +1,28 @@
 ---
 marp: true
 author: carlos.quintella@uva.br
-backgroundColor: black
+backgroundColor: white
 paginate: true
 theme: gaia
 ---
 
-RASCUNHO
-
-<!-- class: invert -->
 <!-- _class: lead -->
-<!-- _color: white -->
 
 # C++ : Bibliotecas #
 
+- Professor: Carlos Alvaro Quintella
+- Revisão: 10/05/2023
+
+![bg 80% left:30%](https://www.uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
+
 ---
 
-O C++ possui uma variedade de bibliotecas padrão disponíveis para o desenvolvimento de aplicações, entre elas a Standard Template Library (STL). que é um conjunto de classes comuso de `template`, destinadas a fornecer estruturas de dados e funções de programação comuns, como listas, pilhas, arrays, etc. Ela consiste em uma biblioteca de classes de contêineres, algoritmos e iteradores. Como uma biblioteca generalizada, seus componentes são parametrizados. Ter um conhecimento prático das classes template é um pré-requisito para trabalhar com a STL.
+O C++ possui uma variedade de bibliotecas padrão disponíveis para o desenvolvimento de aplicações, entre elas:
+
+- Standard Template Library (STL). que é um conjunto de classes que fazem uso de `template`, destinadas a fornecer estruturas de dados e funções de programação comuns, como listas, pilhas, arrays, etc.
+
+
+Ela consiste em uma biblioteca de classes de contêineres, algoritmos e iteradores. Como uma biblioteca generalizada, seus componentes são parametrizados. Ter um conhecimento prático das classes template é um pré-requisito para trabalhar com a STL.
 
 ---
 

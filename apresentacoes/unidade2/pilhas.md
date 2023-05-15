@@ -186,3 +186,66 @@ int main() {
     return 0;
 }
 ```
+
+---
+
+Exercício:
+
+Uma calculadora de RPN (Notação Polonesa Reversa) funciona seguindo os seguintes passos:
+
+- Comece com uma pilha vazia.
+- Leia a expressão da esquerda para a direita.
+- Se o item atual for um número, empilhe-o na pilha.
+- Se o item atual for um operador, retire os dois itens do topo da pilha, aplique o operador e empilhe o resultado.
+- Continue até que toda a expressão seja lida.
+- O resultado final da expressão será o único item restante na pilha.
+
+---
+
+```c
+#include <iostream>
+#include <sstream>
+
+#define MAX_SIZE 100
+
+bool isOperator(const std::string &token) {
+    return token == "+" || token == "-" || token == "*" || token == "/";
+}
+
+double performOperation(const std::string &operation, double operand1, double operand2) {
+    if (operation == "+") return operand1 + operand2;
+    if (operation == "-") return operand1 - operand2;
+    if (operation == "*") return operand1 * operand2;
+    if (operation == "/") return operand1 / operand2;
+    
+    return 0;
+}
+
+double evaluateRPN(const std::string &expression) {
+    double stack[MAX_SIZE];
+    int stackTop = -1;
+    std::stringstream tokens(expression);
+    std::string token;
+    
+    while (std::getline(tokens, token, ' ')) {
+        if (isOperator(token)) {
+            double operand2 = stack[stackTop--];
+            double operand1 = stack[stackTop--];
+            
+            stack[++stackTop] = performOperation(token, operand1, operand2);
+        } else {
+            stack[++stackTop] = std::stod(token);
+        }
+    }
+    
+    return stack[stackTop];
+}
+
+int main() {
+    std::string expression = "5 3 4 + *";
+    std::cout << "Resultado: " << evaluateRPN(expression) << std::endl;
+    
+    return 0;
+}
+
+```

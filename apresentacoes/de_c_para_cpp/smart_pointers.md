@@ -1,14 +1,13 @@
 ---
 marp: true
 author: carlos.quintella@uva.br
-backgroundColor: black
+backgroundColor: white
 paginate: true
 theme: gaia
 ---
 
-<!-- class: invert -->
 <!-- _class: lead -->
-<!-- _color: white -->
+
 
 # Smart Pointers #
 

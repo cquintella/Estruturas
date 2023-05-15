@@ -66,21 +66,21 @@ int diff = p2 - p1; // diff é igual a 4, pois há 4 elementos entre p1 e p2
 
 Exemplo:
 
-````c
+```c
 int arr[5] = {1, 2, 3, 4, 5};
 int *p = arr; // p aponta para o primeiro elemento do array (arr[0])
 p++;          // p agora aponta para o segundo elemento do array (arr[1])
 p--;          // p volta a apontar para o primeiro elemento do array (arr[0])
 
-````
+```
 
 ---
 
-* É importante ressaltar que a aritmética de ponteiros leva em consideração o tamanho do tipo de dado apontado pelo ponteiro.
+- É importante ressaltar que a aritmética de ponteiros leva em consideração o tamanho do tipo de dado apontado pelo ponteiro.
 
-* Portanto, ao adicionar ou subtrair um valor de um ponteiro, o deslocamento é ajustado automaticamente com base no tamanho do tipo de dado. 
+- Portanto, ao adicionar ou subtrair um valor de um ponteiro, o deslocamento é ajustado automaticamente com base no tamanho do tipo de dado.
 
-* Por exemplo, se você estiver trabalhando com um ponteiro para int e incrementar o ponteiro, ele avançará o número de bytes necessários para armazenar um inteiro (geralmente 4 bytes em sistemas modernos).
+- Por exemplo, se você estiver trabalhando com um ponteiro para int e incrementar o ponteiro, ele avançará o número de bytes necessários para armazenar um inteiro (geralmente 4 bytes em sistemas modernos).
 
 ---
 

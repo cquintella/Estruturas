@@ -14,6 +14,8 @@ theme: gaia
 - Professor: Carlos Alvaro Quintella
 - Revisão: 10/05/2023
 
+![bg 80% left:30%](https://www.uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
+
 ---
 
 A orientação a objetos é um paradigma de programação que utiliza objetos e classes para representar e organizar os dados e as funcionalidades de um programa.

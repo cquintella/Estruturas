@@ -1,13 +1,21 @@
 ---
 marp: true
 author: carlos.quintella@uva.br
+backgroundColor: white
 paginate: true
 theme: gaia
 ---
 
 <!-- _class: lead -->
 
-# Novidades no Gerenciamento de Memória Dinâmica#
+<!-- _class: lead -->
+
+# Novidades no Gerenciamento de Memória Dinâmica #
+
+- Professor: Carlos Alvaro Quintella
+- Revisão: 10/05/2023
+
+![bg 80% left:30%](https://www.uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
 
 ---
 
