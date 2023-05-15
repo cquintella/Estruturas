@@ -16,7 +16,7 @@ RASCUNHO
 
 ---
 
-O C++ possui uma variedade de bibliotecas padrão disponíveis para o desenvolvimento de aplicações. Aqui estão algumas das principais bibliotecas embutidas no C++:
+O C++ possui uma variedade de bibliotecas padrão disponíveis para o desenvolvimento de aplicações, entre elas a Standard Template Library (STL). que é um conjunto de classes comuso de `template`, destinadas a fornecer estruturas de dados e funções de programação comuns, como listas, pilhas, arrays, etc. Ela consiste em uma biblioteca de classes de contêineres, algoritmos e iteradores. Como uma biblioteca generalizada, seus componentes são parametrizados. Ter um conhecimento prático das classes template é um pré-requisito para trabalhar com a STL.
 
 ---
 
