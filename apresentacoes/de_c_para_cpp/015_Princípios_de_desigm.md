@@ -18,6 +18,20 @@ theme: gaia
 
 ---
 
+KIS keep it simple
+
+---
+
+RTFM
+
+---
+
+Mantenha o estilo coeso:
+
+- [Google c++ style guide](https://github.com/google/styleguide)
+
+---
+
 ## SOLID ##
 
 SOLID é um acrônimo que representa um conjunto de princípios de design de software que promovem a construção de código limpo, modular e sustentável. Esses princípios foram formulados por Robert C. Martin (também conhecido como Uncle Bob) e são amplamente aceitos e aplicados no desenvolvimento de software.

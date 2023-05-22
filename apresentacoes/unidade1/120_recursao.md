@@ -348,6 +348,74 @@ Ambas as abordagens têm como objetivo reduzir a redundância de cálculos e mel
 
 ---
 
+## Exemplo de uso de MEMOIZAÇÃO ##
+
+```cpp
+#include <iostream>
+#include <unordered_map>
+
+std::unordered_map<int, long long> memo;
+
+long long fibonacci(int n) {
+    if (n <= 1) {
+        return n;
+    }
+
+    // Verifica se o resultado já foi calculado anteriormente
+    if (memo.find(n) != memo.end()) {
+        return memo[n];
+    }
+
+    // Calcula o resultado e armazena na memória
+    long long result = fibonacci(n - 1) + fibonacci(n - 2);
+    memo[n] = result;
+
+    return result;
+}
+
+int main() {
+    int n = 10; // Exemplo: Calcula o décimo número da sequência de Fibonacci
+
+    long long result = fibonacci(n);
+
+    std::cout << "O " << n << "º número da sequência de Fibonacci é: " << result << std::endl;
+
+    return 0;
+}
+```
+
+---
+
+## Cálculo do Fatorial ##
+
+```cpp
+
+#include <iostream>
+
+int factorial(int n) {
+    // Caso base: se n for 0 ou 1, o fatorial é 1
+    if (n == 0 || n == 1) {
+        return 1;
+    }
+
+    // Chamada recursiva para calcular o fatorial de n - 1
+    return n * factorial(n - 1);
+}
+
+int main() {
+    int n = 5;  // Exemplo: Calcula o fatorial de 5
+
+    int result = factorial(n);
+
+    std::cout << "O fatorial de " << n << " é: " << result << std::endl;
+
+    return 0;
+}
+
+```
+
+---
+
 ## Conclusão ##
 
 O uso de recursão torna a solução mais simples e elegante, embora em geral ocasione em mais espaço de memória.

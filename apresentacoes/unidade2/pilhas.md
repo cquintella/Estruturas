@@ -36,11 +36,13 @@ As operações básicas realizadas em uma pilha incluem:
 
 ---
 
-As pilhas podem ser implementadas utilizando diferentes estruturas de dados subjacentes, como arrays ou listas encadeadas. A escolha da estrutura de dados depende das necessidades do problema e dos requisitos de desempenho.
+As pilhas podem ser implementadas utilizando diferentes estruturas de dados subjacentes, como arrays ou listas encadeadas.
+
+- A escolha da estrutura de dados depende das necessidades do problema e dos requisitos de desempenho.
 
 ---
 
-TAD: Pilha
+### TAD: Pilha ###
 
 ```pseudocode
 Tipo Pilha

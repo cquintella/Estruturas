@@ -9,8 +9,10 @@ theme: gaia
 
 # Introdução à Linguagem C++ #
 
-Professor: Carlos Alvaro Quintella
-5/6/2023
+- Professor: Carlos Alvaro Quintella.
+- Última Revisão: 5/6/2023.
+
+![bg 80% left:30%](https://www.uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
 
 ---
 
