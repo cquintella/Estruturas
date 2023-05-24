@@ -86,15 +86,17 @@ Estrutura de dados é uma técnica de organização dos dados no computador para
 
 "Introduction to Algorithms" by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein
 
-"Estrutura de Dado" - Ana Fernanda Gomes Ascencio
+"Estrutura de Dados" - Ana Fernanda Gomes Ascencio
 
 "Data Structures and Algorithms" - Adam Drozdek
 
 [Video](https://www.youtube.com/watch?v=L5EyOokcl7s)
 
+[Redis](https://www.youtube.com/watch?v=HMEwYxXFTjM)
+
 ---
 
-## Grupo ##
+## Grupo
 
 [https://urlis.net/o9xwz7wf](https://t.me/+2GuhHZw4rG82ZDJh)
 
