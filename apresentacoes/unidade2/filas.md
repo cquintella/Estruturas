@@ -18,7 +18,10 @@ theme: gaia
 
 ---
 
-Filas são uma estrutura de dados linear muito comum para organizar e manipular dados. Uma fila é uma coleção ordenada de elementos na qual um elemento é inserido no final (também conhecido como "cauda" da fila) e removido do início (também conhecida como "cabeça" da fila). Essa propriedade faz com que a fila siga o protocolo **FIFO (First In, First Out)**, ou seja, o primeiro elemento que entra na fila é o primeiro a sair.
+Fila é uma estrutura de dados linear, também muito comum para organizar e manipular dados.
+
+- Uma fila é uma coleção ordenada de elementos na qual um elemento é inserido no final (também conhecido como "cauda" da fila) e removido do início (também conhecida como "cabeça" da fila).
+- Essa propriedade faz com que a fila siga o protocolo **FIFO (First In, First Out)**, ou seja, o primeiro elemento que entra na fila é o primeiro a sair.
 
 ---
 
@@ -27,8 +30,8 @@ Filas são uma estrutura de dados linear muito comum para organizar e manipular 
 As operações básicas realizadas em uma fila incluem:
 
 - Enfileirar (enqueue): Adicionar um elemento no final da fila.
--Desenfileirar (dequeue): Remover o elemento do início da fila e retorná-lo.
--Ver frente (front): Acessar o elemento no início da fila sem removê-lo.
+- Desenfileirar (dequeue): Remover o elemento do início da fila e retorná-lo.
+- Ver frente (front): Acessar o elemento no início da fila sem removê-lo.
 - Verificar se está vazia (is_empty): Verificar se a fila está vazia ou não.
 - Tamanho (size): Obter o número de elementos na fila.
 
@@ -166,3 +169,65 @@ int main() {
     return 0;
 }
 ```
+
+---
+
+### Filas de Prioridade ###
+
+Uma fila de prioridade é uma variação da fila em que cada elemento possui uma prioridade associada. Os elementos são organizados na fila de acordo com suas prioridades, de modo que o elemento de maior (ou menor) prioridade fica na frente da fila. Existem várias implementações possíveis de filas de prioridade, como heaps binários, árvores de busca balanceadas, filas de prioridade baseadas em arrays, entre outros.
+
+---
+Definição do TAD da fila de prioridade
+
+```pseudocode
+Tipo FilaComPrioridade:
+    Tipo Prioridade
+    Tipo Elemento
+    função vazia() -> booleano
+    função tamanho() -> inteiro
+    procedimento enfileirar(elemento: Elemento, prioridade: Prioridade)
+    função desenfileirar() -> Elemento
+    função frente() -> Elemento
+```
+
+---
+
+### Filas circulares ###
+
+Filas circulares: Uma fila circular é uma variação da fila em que o início e o fim da fila estão conectados, formando um ciclo. Isso permite que a fila seja reutilizada sem necessidade de realocação de memória, uma vez que os elementos são enfileirados e desenfileirados em posições circulares. Essa abordagem é especialmente útil quando há um limite fixo de elementos na fila e se deseja evitar a realocação frequente de memória.
+
+---
+
+Além disso, as filas circulares oferecem uma implementação eficiente das operações de enfileirar e desenfileirar, uma vez que a posição do início da fila é mantida e atualizada de forma circular. Isso evita a necessidade de mover todos os elementos restantes quando ocorre uma desenfileiração, como é o caso em filas lineares.
+
+![fila circular](https://mermaid.ink/img/pako:eNqd0r-vwiAQB_B_hZxLm7SDVl_yGEz6c3LSlYXIYRspbSqNGuP_LqUxj_V14-5zX4aDF5w7gUDhMvC-Jocj04SkQVAqbFGbjqzDkMTxnmRebxOG01jmIPcgmSF3UHiwnaFwUHqwm6F0UHnwM0PlIGV6Km7mqZCkRDZK0ZX8lZFtDd0V6SpJkm8R3xtharrpH3-ZbEEmX5ApFmTKBZnqHxmIoMWh5Y2wz_ya7mBgartmBtQeBUo-KsOA6bcd5aPpTk99BmqGESMYe8ENFg23H6QFKrm64fsDR-Kxvg)
+
+---
+
+```pseudocode
+Tipo FilaCircular:
+    variável início: inteiro
+    variável fim: inteiro
+    variável capacidade: inteiro
+    variável elementos: vetor de elementos
+    função vazia() -> booleano
+    função cheia() -> booleano
+    função tamanho() -> inteiro
+    procedimento enfileirar(elemento)
+    função desenfileirar() -> elemento
+    função frente() -> elemento
+```
+
+---
+
+### Perguntas ###
+
+1) Qual é o princípio fundamental das filas em relação à ordem de inserção e remoção de elementos?
+
+2) Quais são as principais diferenças entre uma fila e uma pilha?
+
+3) Explique como a operação "enfileirar" (ou "enqueue") funciona em uma fila.
+
+4) Quais são as possíveis aplicações práticas do uso de filas em algoritmos ou sistemas?
+
+5) Como o conceito de "prioridade" é aplicado em filas de prioridade? Explique com um exemplo.
