@@ -58,12 +58,14 @@ int main() {
     inicializarPilha(&pilha);
 
     while (1) {
-        printf("Digite uma linha de texto (ou << para remover o último item da pilha):\n");
+        printf("Digite uma linha de texto (ou .. para sair do programa):\n");
         fgets(linha, MAX_CARACTERES, stdin);
 
         linha[strcspn(linha, "\n")] = '\0';  // Remove o caractere de nova linha do final da string
 
-        if (strcmp(linha, "<<") == 0) {
+        if (strcmp(linha, "..") == 0) {
+            break;
+        } else if (strcmp(linha, "<<") == 0) {
             pop(&pilha);
         } else {
             push(&pilha, linha);

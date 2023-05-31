@@ -20,7 +20,19 @@ theme: gaia
 
 # Pilhas #
 
-Pilhas são uma estrutura de dados linear comumente utilizada para organizar e manipular dados. Uma pilha segue o protocolo **LIFO (Last In, First Out)**, onde o último elemento inserido é o primeiro a ser removido.
+Pilha é uma estrutura de dados linear, comumente utilizada para organizar e manipular dados. Ela segue o protocolo **LIFO (Last In, First Out)**, o que significa que o último elemento inserido é o primeiro a ser removido.
+
+- Como numa pilha de pratos, você coloca um por um, mas quando pega, pega sempre o de cima.
+
+![bg 100% left:30%](https://thumbs.dreamstime.com/z/pilha-de-pratos-76312114.jpg)
+
+---
+
+- As pilhas podem ser implementadas com vetores ou elementos da memória heap.
+
+Quais as vantagens e desvantagens de cada uma?
+
+* A escolha depende das necessidades do problema e dos requisitos de desempenho.
 
 ---
 
@@ -33,12 +45,6 @@ As operações básicas realizadas em uma pilha incluem:
 - Ver topo (top): Acessar o elemento do topo da pilha sem removê-lo.
 - Verificar se está vazia (is_empty): Verificar se a pilha está vazia ou não.
 - Tamanho (size): Obter o número de elementos na pilha.
-
----
-
-As pilhas podem ser implementadas utilizando diferentes estruturas de dados subjacentes, como arrays ou listas encadeadas.
-
-- A escolha da estrutura de dados depende das necessidades do problema e dos requisitos de desempenho.
 
 ---
 
@@ -67,12 +73,97 @@ As pilhas são amplamente utilizadas em diversas situações do mundo real e em 
 - Gerenciamento de memória em sistemas operacionais.
 - Avaliação de expressões aritméticas.
 - Implementação de algoritmos como busca em profundidade.
+- Implentação do UNDO ou desfazer em aplicações.
+
+---
 
 A estrutura LIFO das pilhas torna-as úteis para resolver problemas nos quais a ordem inversa de operações é relevante.
 
 ---
 
+Implementação em C++ com vetor.
+
+```cpp
+class Stack {
+private:
+    int* data;  // Vetor para armazenar os elementos da pilha
+    int capacity;  // Capacidade máxima da pilha
+    int top;  // Índice do elemento no topo da pilha
+
+public:
+    // Construtor da pilha
+    Stack(int size) {
+        capacity = size;
+        data = new int[capacity];
+        top = -1;  // Inicializa o índice do topo como -1 (pilha vazia)
+    }
+
+    // Destrutor da pilha
+    ~Stack() {
+        delete[] data;
+    }
+
+```
+
+---
+
+```c
+    // Verifica se a pilha está vazia
+    bool isEmpty() {
+        return (top == -1);
+    }
+
+    // Verifica se a pilha está cheia
+    bool isFull() {
+        return (top == capacity - 1);
+    }
+
+    // Insere um elemento no topo da pilha
+    void push(int element) {
+        if (isFull()) {
+            cout << "Erro: a pilha está cheia." << endl;
+        } else {
+            top++;
+            data[top] = element;
+        }
+    }
+```
+
+---
+
+```c
+    // Remove o elemento do topo da pilha e retorna seu valor
+    int pop() {
+        if (isEmpty()) {
+            cout << "Erro: a pilha está vazia." << endl;
+            return -1;  // Valor inválido para indicar um erro
+        } else {
+            int element = data[top];
+            top--;
+            return element;
+        }
+    }
+
+    // Retorna o elemento no topo da pilha sem removê-lo
+    int peek() {
+        if (isEmpty()) {
+            cout << "Erro: a pilha está vazia." << endl;
+            return -1;  // Valor inválido para indicar um erro
+        } else {
+            return data[top];
+        }
+    }
+};
+````
+
+
+---
+
 ## Implementação usando memória dinamica ##
+
+![pilha com memoriadinamica](https://mermaid.ink/img/pako:eNo9jr0OgzAMhF8l8kQlQP3ZMlSCZuzUjgmDRUxBIgGlyVAh3r0pjfB0n-5s3wLtpAk4vBzOPbs_lGVxqkyejs3hD3UmzzvcMnnZQciyLBtlk8WK4srqtLRBlc5tICAHQ87goOPD5Wcp8D0ZUsCj1NRhGL0CZdcYxeCn58e2wL0LlEOYNXoSA8aqBniH45vWL9cmNig)
+
+---
 
 ```mermaid
 graph LR
@@ -87,6 +178,8 @@ graph LR
 ```
 
 ---
+
+Implementação em C++
 
 ```cpp
 #include <iostream>
@@ -133,7 +226,11 @@ public:
         topNode = topNode->next;
         delete temp;
     }
+```
 
+---
+
+```c
     int top() {
         if (isEmpty()) {
             std::cout << "A pilha está vazia. Não há elementos no topo.\n";
@@ -174,7 +271,11 @@ int main() {
 
     // Remoção do elemento do topo da pilha
     stack.pop();
+```
 
+---
+
+```c
     // Verificação do novo elemento no topo da pilha
     std::cout << "Novo elemento no topo da pilha: " << stack.top() << std::endl;
     
@@ -251,3 +352,13 @@ int main() {
 }
 
 ```
+
+---
+
+1) Como funciona o princípio do "LIFO" (Last-In, First-Out) em uma pilha? Explique com um exemplo.
+
+2) Quais são as duas operações básicas que podem ser realizadas em uma pilha?
+
+3) Quais são os possíveis cenários de erro em uma pilha?
+
+4) Qual é a diferença entre uma pilha estática e uma pilha dinâmica?
