@@ -3,25 +3,47 @@ marp: true
 author: carlos.quintella@uva.br
 backgroundColor: white
 paginate: true
-footer: Estrutura de Dados
+footer: Estruturas de Dados
 theme: gaia
 ---
 
 <!-- _class: lead -->
 
-# Filas #
+# Filas (Queues)    #
 
 - Professor: Carlos Alvaro Quintella
-- Revisão: 10/05/2023
+- Revisão: 05/06/2023
 
 ![UVA 70% bg left:20%](https://uva.br/wp-content/themes/uva-theme/dist/images/header_logo.svg)
 
 ---
 
-Fila é uma estrutura de dados linear, também muito comum para organizar e manipular dados.
+'Uma Fila é' uma estrutura de dados linear muito comum , usada para organizar e manipular dados.
 
-- Uma fila é uma coleção ordenada de elementos na qual um elemento é inserido no final (também conhecido como "cauda" da fila) e removido do início (também conhecida como "cabeça" da fila).
+- É uma coleção ordenada de elementos na qual um elemento é inserido no final (também conhecido como "cauda" da fila) e removido do início (também conhecida como "cabeça" da fila).
 - Essa propriedade faz com que a fila siga o protocolo **FIFO (First In, First Out)**, ou seja, o primeiro elemento que entra na fila é o primeiro a sair.
+
+---
+
+## Aplicações ##
+
+Elas têm aplicações amplas em várias áreas:
+
+- Ciência da Computação e TI: Usadas para controlar o fluxo de dados em buffers e gerenciar processos em sistemas operacionais.
+- Simulações: Modelam eventos que ocorrem em uma sequência específica, como clientes em uma fila de supermercado.
+- Jogos: Gerenciam tarefas que precisam ser executadas em uma ordem específica, como a sequência de movimentos dos jogadores.
+
+---
+
+- Atendimento ao Cliente: Gerenciam chamadas em centros de atendimento ao cliente, colocando os clientes em uma fila até que um representante esteja disponível.
+- Sistemas de Mensagens: São fundamentais para sistemas de mensagens como Kafka ou RabbitMQ, permitindo a entrega confiável e ordenada de mensagens.
+- Transações comerciais, logistica, trânsito, sistemas bancários e financeiros.
+- Gerenciamento de processos e agendamento de tarefas em sistemas operacionais.
+
+---
+
+- Controle de fluxo de dados em redes e sistemas de comunicação.
+- Simulação de eventos discretos e sistemas de filas na teoria das filas.
 
 ---
 
@@ -37,11 +59,15 @@ As operações básicas realizadas em uma fila incluem:
 
 ---
 
-As filas podem ser implementadas usando várias estruturas de dados subjacentes, como arrays, listas encadeadas ou até mesmo outras estruturas de dados como pilhas. A escolha da estrutura de dados subjacente pode afetar o desempenho e a complexidade das operações da fila.
+As filas podem ser implementadas usando várias estruturas de dados subjacentes, como arrays, listas encadeadas ou até mesmo outras estruturas de dados como pilhas.
+
+- A escolha da estrutura de dados subjacente pode afetar o desempenho e a complexidade das operações da fila.
+
+- Se olharmos bem, podemos que o código para implementar uma fila é bem parecido com o código de uma pilha.
 
 ---
 
-TAD: Fila
+Tipo Abstrato de Dados: Fila
 
 ```pseudocode
 Tipo Fila
@@ -51,6 +77,7 @@ Tipo Fila
         
     Operações:
         - construtor(): inicializa a fila vazia
+        - destruto(): liberar memória
         - enfileirar(x): adiciona um elemento x ao final da fila
         - desenfileirar(): remove e retorna o elemento do início da fila
         - frente(): retorna o elemento do início da fila sem removê-lo
@@ -60,14 +87,7 @@ Tipo Fila
 
 ---
 
-Filas são usadas em muitas situações do mundo real e em diversos problemas de computação, como:
-
-- Gerenciamento de processos e agendamento de tarefas em sistemas operacionais.
-- Controle de fluxo de dados em redes e sistemas de comunicação.
-- Simulação de eventos discretos e sistemas de filas na teoria das filas.
-- Navegação em grafos e árvores usando algoritmos como busca em largura.
-
----
+Fila usando memória dinâmica
 
 ```c
 #include <stdio.h>
@@ -172,12 +192,99 @@ int main() {
 
 ---
 
+```cpp
+#include <iostream>
+
+class Fila {
+private:
+    int* elementos;
+    int tamanho;
+    int capacidade;
+    int inicio;
+    int fim;
+
+public:
+    // Construtor
+    Fila(int capacidade) {
+        this->capacidade = capacidade;
+        this->elementos = new int[capacidade];
+        this->tamanho = 0;
+        this->inicio = 0;
+        this->fim = -1;
+    }
+
+    // Destrutor
+    ~Fila() {
+        delete[] elementos;
+    }
+
+    // Adiciona um elemento ao final da fila
+    void enfileirar(int x) {
+        if (tamanho == capacidade) {
+            std::cerr << "Erro, fila cheia.\n";
+            return;
+        }
+        fim = (fim + 1) % capacidade;
+        elementos[fim] = x;
+        tamanho++;
+    }
+
+    // Remove e retorna o elemento do início da fila
+    int desenfileirar() {
+        if (esta_vazia()) {
+            std::cerr << "Erro, fila vazia.\n";
+            return -1;
+        }
+        int valor = elementos[inicio];
+        inicio = (inicio + 1) % capacidade;
+        tamanho--;
+        return valor;
+    }
+
+    // Retorna o elemento do início da fila sem removê-lo
+    int frente() {
+        if (esta_vazia()) {
+            std::cerr << "Erro, fila vazia.\n";
+            return -1;
+        }
+        return elementos[inicio];
+    }
+
+    // Retorna verdadeiro se a fila estiver vazia, falso caso contrário
+    bool esta_vazia() {
+        return tamanho == 0;
+    }
+
+    // Retorna o número de elementos na fila
+    int obter_tamanho() {
+        return tamanho;
+    }
+};
+
+int main() {
+    Fila fila(5);
+
+    fila.enfileirar(1);
+    fila.enfileirar(2);
+    fila.enfileirar(3);
+
+    std::cout << "Desenfileirando: " << fila.desenfileirar() << std::endl;
+    std::cout << "Frente da fila: " << fila.frente() << std::endl;
+    std::cout << "Tamanho da fila: " << fila.obter_tamanho() << std::endl;
+
+    return 0;
+}
+```
+
+---
+
 ### Filas de Prioridade ###
 
 Uma fila de prioridade é uma variação da fila em que cada elemento possui uma prioridade associada. Os elementos são organizados na fila de acordo com suas prioridades, de modo que o elemento de maior (ou menor) prioridade fica na frente da fila. Existem várias implementações possíveis de filas de prioridade, como heaps binários, árvores de busca balanceadas, filas de prioridade baseadas em arrays, entre outros.
 
 ---
-Definição do TAD da fila de prioridade
+
+TAD da fila de prioridade
 
 ```pseudocode
 Tipo FilaComPrioridade:
@@ -188,6 +295,51 @@ Tipo FilaComPrioridade:
     procedimento enfileirar(elemento: Elemento, prioridade: Prioridade)
     função desenfileirar() -> Elemento
     função frente() -> Elemento
+```
+
+---
+
+```c++
+#include <iostream>
+#include <queue>
+
+class Task {
+public:
+    int priority;
+    std::string name;
+
+    Task(int priority, std::string name) : priority(priority), name(name) {}
+
+    // Overload the less than operator for priority comparison
+    bool operator<(const Task& t) const {
+        return priority < t.priority;
+    }
+};
+
+int main() {
+    // Create a priority queue of Tasks
+    std::priority_queue<Task> taskQueue;
+
+    // Add tasks to the queue
+    taskQueue.push(Task(3, "Task 1"));
+    taskQueue.push(Task(2, "Task 2"));
+    taskQueue.push(Task(5, "Task 3"));
+    taskQueue.push(Task(1, "Task 4"));
+    taskQueue.push(Task(1, "Task 5"));
+    taskQueue.push(Task(5, "Task 6"));
+    taskQueue.push(Task(4, "Task 7"));
+    taskQueue.push(Task(2, "Task 8"));
+    taskQueue.push(Task(4, "Task 9"));
+
+    // Process tasks
+    while (!taskQueue.empty()) {
+        Task task = taskQueue.top();
+        std::cout << "Processing " << task.name << " with priority " << task.priority << std::endl;
+        taskQueue.pop();
+    }
+
+    return 0;
+}
 ```
 
 ---
@@ -220,6 +372,123 @@ Tipo FilaCircular:
 
 ---
 
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+    int* array;
+    int capacity;
+    int front;
+    int rear;
+    int size;
+} CircularQueue;
+
+// Função para criar uma nova fila circular
+CircularQueue* createQueue(int capacity) {
+    CircularQueue* queue = (CircularQueue*)malloc(sizeof(CircularQueue));
+    queue->array = (int*)malloc(capacity * sizeof(int));
+    queue->capacity = capacity;
+    queue->front = -1;
+    queue->rear = -1;
+    queue->size = 0;
+    return queue;
+}
+
+// Função para verificar se a fila está vazia
+int isEmpty(CircularQueue* queue) {
+    return (queue->size == 0);
+}
+
+// Função para verificar se a fila está cheia
+int isFull(CircularQueue* queue) {
+    return (queue->size == queue->capacity);
+}
+
+// Função para enfileirar um elemento na fila
+void enqueue(CircularQueue* queue, int item) {
+    if (isFull(queue)) {
+        printf("Erro: a fila está cheia\n");
+        return;
+    }
+    queue->rear = (queue->rear + 1) % queue->capacity;
+    queue->array[queue->rear] = item;
+    queue->size++;
+    if (queue->front == -1)
+        queue->front = queue->rear;
+}
+
+// Função para desenfileirar um elemento da fila
+int dequeue(CircularQueue* queue) {
+    if (isEmpty(queue)) {
+        printf("Erro: a fila está vazia\n");
+        return -1;
+    }
+    int item = queue->array[queue->front];
+    if (queue->front == queue->rear)
+        queue->front = queue->rear = -1;
+    else
+        queue->front = (queue->front + 1) % queue->capacity;
+    queue->size--;
+    return item;
+}
+
+// Função para obter o elemento da frente da fila
+int front(CircularQueue* queue) {
+    if (isEmpty(queue)) {
+        printf("Erro: a fila está vazia\n");
+        return -1;
+    }
+    return queue->array[queue->front];
+}
+
+// Função para imprimir os elementos da fila
+void printQueue(CircularQueue* queue) {
+    if (isEmpty(queue)) {
+        printf("A fila está vazia\n");
+        return;
+    }
+    printf("Elementos da fila: ");
+    int i;
+    for (i = 0; i < queue->size; i++) {
+        int index = (queue->front + i) % queue->capacity;
+        printf("%d ", queue->array[index]);
+    }
+    printf("\n");
+}
+
+// Função para liberar a memória alocada pela fila
+void destroyQueue(CircularQueue* queue) {
+    free(queue->array);
+    free(queue);
+}
+
+int main() {
+    int capacity = 5;
+    CircularQueue* queue = createQueue(capacity);
+
+    enqueue(queue, 1);
+    enqueue(queue, 2);
+    enqueue(queue, 3);
+
+    printQueue(queue);  // Output: Elementos da fila: 1 2 3
+
+    int frontElement = front(queue);
+    printf("Elemento da frente: %d\n", frontElement);  // Output: Elemento da frente: 1
+
+    int dequeuedElement = dequeue(queue);
+    printf("Elemento desenfileirado: %d\n", dequeuedElement);  // Output: Elemento desenfileirado: 1
+
+    printQueue(queue);  // Output: Elementos da fila: 2 3
+
+    destroyQueue(queue);
+
+    return 0;
+}
+```
+
+---
+
 ### Perguntas ###
 
 1) Qual é o princípio fundamental das filas em relação à ordem de inserção e remoção de elementos?
@@ -231,3 +500,7 @@ Tipo FilaCircular:
 4) Quais são as possíveis aplicações práticas do uso de filas em algoritmos ou sistemas?
 
 5) Como o conceito de "prioridade" é aplicado em filas de prioridade? Explique com um exemplo.
+
+---
+
+Implemente uma fila usando duas pilhas, enfileirar e desenfileirar. Quando a fila desenfilarar esvazir passe os elementos de enfileirar para desenfileirar.
