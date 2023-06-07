@@ -30,6 +30,8 @@ A origem das árvores como estruturas de dados remonta às primeiras pesquisas e
 
 ## Definições ##
 
+- Uma estrutura de dados vazia, é árvore vazia.
+
 - **Raíz**: A raiz é o primeiro nó da árvore e não possui nenhum nó pai. Todos os outros nós da árvore são descendentes diretos ou indiretos da raiz.
 
 - **Floresta**: Uma floresta é um conjunto de árvores que não estão conectadas entre si. Cada árvore individual em uma floresta é chamada de componente.
@@ -53,7 +55,11 @@ A origem das árvores como estruturas de dados remonta às primeiras pesquisas e
 
 - **Árvore Cheia**: Uma árvore de grau `d` é uma árvore cheia se possui o número máximo de nós, isto é, todos os nós tem número máximo de filhos (exceto as folhas, logicamente) e o das as folhas estão na mesma altura.
 
--- **Árvores com grau 2**: Cada nó pode ter 2 filhos, no máximo.
+- **Árvores com grau 2**: Cada nó pode ter 2 filhos, no máximo.
+
+---
+
+- **Caminho**: Cada nó deve ser alcançável a partir da raiz através de uma sequência única de arcos, chamada caminho. O número de árcos no caminho é o **comprimento** do caminho..
 
 ---
 
@@ -131,7 +137,7 @@ Elas são usadas para representar hierarquias, facilitar pesquisas eficientes e 
 
 **Árvore Binária**: É uma árvore onde cada nó tem no máximo dois filhos, geralmente chamados de filho esquerdo e filho direito.
 
-Árvore Binária de Busca (Binary Search Tree, BST): É uma árvore binária com a propriedade de que o valor de cada nó é maior do que ou igual a todos os valores dos nós à sua esquerda e menor do que ou igual a todos os valores dos nós à sua direita. As BSTs permitem inserção, remoção e pesquisa eficientes.
+**Árvore Binária de Busca** (Binary Search Tree, BST): É uma árvore binária com a propriedade de que o valor de cada nó é maior do que ou igual a todos os valores dos nós à sua esquerda e menor do que ou igual a todos os valores dos nós à sua direita. As BSTs permitem inserção, remoção e pesquisa eficientes.
 
 ---
 
@@ -142,6 +148,12 @@ Elas são usadas para representar hierarquias, facilitar pesquisas eficientes e 
 ---
 
 **Árvore B**: É uma árvore de busca generalizada que permite que cada nó tenha um número variável de filhos (maior que 2) e chaves. As árvores B são comumente usadas em sistemas de gerenciamento de banco de dados e sistemas de arquivos para armazenar e recuperar dados de maneira eficiente.
+
+A estrutura das Árvores B é otimizada para minimizar o número de acessos a disco ou outras operações de entrada e saída, tornando-as ideais para sistemas que precisam lidar com grandes volumes de dados persistentes.
+
+---
+
+**Árvore B+** é uma variação da Árvore B que foi projetada especificamente para otimizar a recuperação de dados em sistemas de armazenamento em disco.
 
 **Árvore Trie (ou Prefix Tree)**: É uma árvore de pesquisa onde os nós armazenam caracteres em vez de valores completos. As tries são usadas para armazenar um conjunto dinâmico de strings, permitindo pesquisas eficientes por prefixo.
 
@@ -154,3 +166,5 @@ Elas são usadas para representar hierarquias, facilitar pesquisas eficientes e 
 ---
 
 **Árvore K-D (K-Dimensional Tree)**: É uma árvore binária de busca que armazena pontos em um espaço k-dimensional. As árvores K-D são usadas para pesquisas espaciais eficientes, como consultas de vizinhos mais próximos.
+
+---

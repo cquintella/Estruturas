@@ -32,15 +32,18 @@ Cada conjunto de dados pede uma estrutura de organização diferente. Algumas fa
 ---
 
 Ao longo do curso estaremos navegando por um verdadeiro zoológico de diferentes tipos de estruturas, como:
+
 - Pilha (Stack): uma estrutura de dados que permite a inserção e remoção de elementos somente no topo.
 - Fila (Queue): uma estrutura de dados que permite a inserção de elementos no final e a remoção de elementos no início.
 - Lista (List): uma estrutura de dados que permite a inserção, remoção e acesso a elementos em qualquer posição.
 - Árvore (Tree): uma estrutura de dados que permite a organização hierárquica dos elementos, com um nó raiz e um conjunto de nós filhos.
 - Grafo (Graph): uma estrutura de dados que permite a modelagem de relações entre objetos, representando um conjunto de vértices e arestas.
 - Tabela de dispersão (Hash table): uma estrutura de dados que permite a recuperação rápida de valores a partir de chaves, usando uma função de dispersão para mapear as chaves para índices na tabela.
+
 ---
 
 Além disso existem outras estrutras que vamos apresentar mas não entrar em detalhes.
+
 - Mapa (Map): uma estrutura de dados que permite a associação de valores a chaves, permitindo a recuperação rápida de valores a partir das chaves.
 - Conjunto (Set): uma estrutura de dados que permite o armazenamento de elementos únicos sem ordem específica.
 
@@ -50,7 +53,7 @@ Estaremos também visitando problemas clássicos recorrentes em ciência da comp
 
 ## Conteúdo
 
-- Revisão de C e C++ (4 horas) --> Aula Invertida!
+- Revisão de C e C++ (4 horas) 
 - Ponteiros (2 horas)
 - Recursão (2 horas)
 - Complexidade de algoritmos (2 horas)
@@ -101,3 +104,5 @@ Estrutura de dados é uma técnica de organização dos dados no computador para
 [https://urlis.net/o9xwz7wf](https://t.me/+2GuhHZw4rG82ZDJh)
 
 ![bg right 50%](https://chart.googleapis.com/chart?chs=70x70&cht=qr&chl=https://urlis.net/o9xwz7wf)
+
+[mindmap]()

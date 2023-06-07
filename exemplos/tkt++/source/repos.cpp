@@ -1,4 +1,7 @@
 //repos.cpp
+#ifndef TKTPP_REPOS_H
+#define TKTPP_REPOS_H
+
 #include <iostream>
 #include <fstream>
 #include "domain.h"
@@ -120,4 +123,3 @@ void CIRepository::deleteCI(int id) {
     // Remove the CI with the given id from the ci-repo.csv file
     // Update the file accordingly
 }
-

@@ -35,3 +35,11 @@ public:
     }
 };
 
+void changeStatus(){
+
+}
+
+void assignTicket(user){
+
+}
+
