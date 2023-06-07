@@ -1,6 +1,21 @@
 ---
+marp: true
+---
 
-## Binary search trees, also called ordered binary trees ##
+# Árvores Binárias #
+
+As árvores binárias são estruturas de dados amplamente utilizadas na ciência da computação. Existem diferentes tipos de árvores binárias, cada uma com suas características específicas e aplicações adequadas.
+
+- Árvores Binárias de Busca
+- Árvores AVL
+- Árvores Rubro-Negras
+- outras.
+
+---
+
+## Árvores binárias de busca ##
+
+Também conhecidas como árvores binárias ordenadas. É um caso
 
 Uma árvore de busca binária tem a seguinte propriedade: para cada nó n da árvore, todos os valores armazenados em sua subárvore esquerda (a árvore cuja raiz é o filho esquerdo) são menores do que o valor v armazenado em n, e todos os valores armazenados na subárvore direita são maiores ou iguais a v.
 
@@ -14,15 +29,15 @@ Além disso, armazenar múltiplas cópias do mesmo valor em uma árvore pode tor
 
 ---
 
-### Implementação de Binary Search Tree ###
+### Implementação de Árvore Binária de Busca ###
 
-As árvores binárias podem ser implementadas de pelo menos duas maneiras: como arrays e como estruturas interconectadas (linked structures).
+As árvores binárias de busca podem ser implementadas de pelo menos duas maneiras: como arrays e como estruturas interconectadas (linked structures).
 
 ---
 
-#### com vetor ###
+#### Implementação com Array ###
 
-Para implementar uma árvore como um array, um nó é declarado como uma estrutura com um campo de informação e dois campos de "ponteiro". Esses campos de ponteiro contêm os índices das células do array em que os filhos esquerdo e direito são armazenados, se houver algum. 
+Para implementar uma árvore como um array, um nó é declarado como uma estrutura com um campo de informação e dois campos de "ponteiro". Esses campos de ponteiro contêm os índices das células do array em que os filhos esquerdo e direito são armazenados, se houver algum.
 
 ```cpp
 struct Node {
@@ -32,15 +47,76 @@ struct Node {
 };
 ````
 
----
+Como se trata de um array, o ponteiro é int, pois é o índice do array.
 
-No entanto, essa implementação pode ser inconveniente, mesmo que o array seja flexível - ou seja, um vetor. As localizações dos filhos devem ser conhecidas para inserir um novo nó e essas localizações podem precisar ser localizadas sequencialmente. Depois de excluir um nó da árvore, um buraco no array teria que ser eliminado. Isso pode ser feito usando um marcador especial para uma célula não utilizada, o que pode levar a popular o array com muitas células não utilizadas, ou movendo os elementos uma posição, o que também requer atualizar as referências aos elementos que foram movidos. Às vezes, uma implementação de array é conveniente e desejável, e será usada ao discutir o heap sort. Mas geralmente, outra abordagem precisa ser usada.
-
----
-
-A raiz é sempre localizada na primeira célula, célula 0, e -1 indica um filho nulo. Nessa representação, os dois filhos do nó 13 estão localizados nas posições 4 e 2, e o filho direito do nó 31 é nulo.
+A raiz é sempre localizada na primeira célula, célula 0, e -1 indica um filho nulo.
 
 ---
+
+Embora possa precer prática, essa implementação pode ser inconveniente, mesmo que se use um array dinâmico como o `<vector>` do C++.
+
+- As localizações dos filhos devem ser conhecidas para inserir um novo nó e essas localizações podem precisar ser localizadas sequencialmente.
+- Outra inconveniência, é que depois de excluir um nó da árvore, um buraco no array teria que ser eliminado.
+- Isso pode ser feito usando um marcador especial para uma célula não utilizada, o que pode levar a popular o array com muitas células não utilizadas, ou movendo os elementos uma posição, o que também requer atualizar as referências aos elementos que foram movidos.
+Às vezes, uma implementação de array é conveniente mas geralmente, outra abordagem precisa ser usada.
+
+---
+
+## Implementação com memória dinâmica ##
+
+---
+
+## Travessia da ávore binária de busca ##
+
+A travessia de uma árvore binária de busca é o processo de visitar todos os nós da árvore em uma determinada ordem. Existem três principais tipos de travessia em uma árvore binária de busca: ordem, pré-ordem e pós-ordem. Cada tipo de travessia segue uma sequência específica de visitas aos nós.
+
+1. Ordem (in-order):
+Na travessia em ordem, os nós são visitados seguindo a seguinte sequência:
+- Visitar o nó filho esquerdo.
+- Visitar o nó atual.
+- Visitar o nó filho direito.
+
+Essa sequência resulta na visita dos nós em ordem crescente das chaves, ou seja, os nós são visitados em uma sequência que reflete a ordenação dos elementos da árvore. Portanto, na travessia em ordem de uma árvore binária de busca, os elementos são visitados em ordem crescente.
+
+A travessia em ordem é útil para obter os elementos da árvore em ordem crescente, realizar operações que requerem uma visita sequencial dos elementos, como a criação de uma lista ordenada, e para validar se a estrutura da árvore está correta.
+
+2. Pré-ordem (pre-order):
+Na travessia pré-ordem, os nós são visitados seguindo a seguinte sequência:
+- Visitar o nó atual.
+- Visitar o nó filho esquerdo.
+- Visitar o nó filho direito.
+
+Essa sequência resulta na visita dos nós na ordem em que eles aparecem à medida que a travessia percorre a árvore. Na travessia pré-ordem, o nó atual é visitado antes de seus filhos.
+
+A travessia pré-ordem é útil para criar uma cópia da árvore, realizar operações que requerem uma visita sequencial dos elementos em uma ordem específica e para percorrer a árvore de forma a obter uma pré-ordem específica.
+
+3. Pós-ordem (post-order):
+Na travessia pós-ordem, os nós são visitados seguindo a seguinte sequência:
+- Visitar o nó filho esquerdo.
+- Visitar o nó filho direito.
+- Visitar o nó atual.
+
+Essa sequência resulta na visita dos nós na ordem em que eles aparecem à medida que a travessia percorre a árvore, mas o nó atual é visitado por último.
+
+A travessia pós-ordem é útil para liberar a memória ocupada pela árvore, realizar operações que requerem uma visita sequencial dos elementos em uma ordem específica (por exemplo, ao calcular a expressão de uma árvore de expressão aritmética) e para percorrer a árvore de forma a obter uma pós-ordem específica.
+
+Em resumo, a travessia de uma árvore binária de busca em ordem visita os nós em ordem crescente, a travessia pré-ordem visita o nó atual antes de seus filhos e a travessia pós-ordem visita os filhos antes de visitar o nó atual. Cada tipo de travessia tem suas aplicações específicas e pode ser escolhido de acordo com os requisitos do problema em questão.
+
+---
+
+## Busca em árvore binária ## 
+
+A busca em uma árvore binária é um procedimento que permite encontrar um elemento específico na estrutura da árvore. Ela envolve percorrer os nós da árvore de forma organizada, comparando o elemento buscado com as chaves presentes nos nós, até que o elemento desejado seja encontrado ou seja determinado que ele não está presente na árvore.
+
+Existem diferentes abordagens para realizar a busca em uma árvore binária. Duas das principais são a busca em ordem (in-order traversal) e a busca em profundidade (depth-first search).
+
+1. Busca em Ordem (In-order traversal): Nessa abordagem, a árvore é percorrida seguindo uma ordem específica, visitando primeiro o nó filho esquerdo, depois o nó atual e, por fim, o nó filho direito. Durante o percurso, é feita uma comparação entre a chave do nó atual e o elemento buscado. Se forem iguais, o elemento é encontrado. Caso contrário, a busca continua pelo nó filho esquerdo se o elemento buscado for menor que a chave do nó atual, ou pelo nó filho direito se for maior. Esse processo é repetido até que o elemento seja encontrado ou até que seja determinado que ele não está presente na árvore.
+
+2. Busca em Profundidade (Depth-First Search): Nessa abordagem, a árvore é percorrida de forma recursiva ou utilizando uma pilha. Começando pela raiz, é feita uma comparação entre o elemento buscado e a chave do nó atual. Se forem iguais, o elemento é encontrado. Caso contrário, a busca continua de forma recursiva pelo nó filho esquerdo se o elemento buscado for menor que a chave do nó atual, ou pelo nó filho direito se for maior. Esse processo é repetido até que o elemento seja encontrado ou até que seja determinado que ele não está presente na árvore.
+
+Independentemente da abordagem escolhida, a busca em uma árvore binária é eficiente, pois a estrutura da árvore permite eliminar uma parte significativa dos nós a cada comparação realizada, reduzindo o número de nós visitados.
+
+É importante ressaltar que a eficiência da busca depende do balanceamento da árvore. Em árvores binárias balanceadas, como as árvores binárias de busca balanceadas (AVL trees) ou as árvores rubro-negras (red-black trees), o tempo de busca é proporcional à altura da árvore, resultando em uma busca com complexidade O(log n), onde n é o número de nós da árvore. Por outro lado, em árvores binárias não balanceadas, a altura pode ser proporcional ao número de nós, resultando em uma busca com complexidade O(n), onde n é o número de nós da árvore.
 
 ### raiz ###
 
@@ -130,9 +206,6 @@ A1 --> B2
 A2 --> B3
 B2 --> C1
 B2 --> C2
-
-```
-```mermaid
 
 ```
 
