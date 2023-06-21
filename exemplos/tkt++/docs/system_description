@@ -1,4 +1,0 @@
-# System description #
-
-The development will use C++, and tkrzw, front_end using IMGUI, there will be more clients in the future, separate frontent from backend. 
-IPC will be restful API.

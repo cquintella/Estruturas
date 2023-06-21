@@ -151,6 +151,53 @@ Em C++, os tipos de dados compostos são aqueles que são formados a partir de o
 
 ---
 
+### namespaces ###
+
+Namespaces em C++ são usados para organizar o código em "contêineres lógicos". Eles provêm um meio para evitar colisões de nomes de funções, classes e variáveis que são definidas em bibliotecas diferentes.
+
+---
+
+```cpp
+nnamespace MeuNamespace {
+    int minhaVariavel = 0;
+
+    void minhaFuncao() {
+        // Código da função...
+    }
+
+    class MinhaClasse {
+        // Definição da classe...
+    };
+}
+// Para usar a variável, função ou classe do namespace:
+int x = MeuNamespace::minhaVariavel;
+MeuNamespace::minhaFuncao();
+MeuNamespace::MinhaClasse obj;
+```
+
+---
+
+### Templates ###
+
+permite a programação genérica, ou seja, a escrita de código que é independente de tipos específicos. Isso permite que os programadores criem funções ou classes que podem trabalhar com diferentes tipos de dados sem precisar reescrever o código para cada tipo.
+
+- Permitem aos programadores escrever código que é reutilizável e flexível, reduzindo a repetição de código e melhorando a manutenção e a eficiência do código.
+
+```cpp
+template <typename T>
+T add(T a, T b) {
+    return a + b;
+}
+
+...
+
+int x = add<int>(3, 4);       // x agora é 7
+double y = add<double>(2.5, 1.5); // y agora é 4.0
+
+```
+
+---
+
 ### Smart Pointers ###
 
 Existem três tipos principais de smart pointers na biblioteca padrão do C++:
@@ -218,6 +265,44 @@ int square(int x) {
     return x * x;
 }
 ```
+
+---
+
+### Passagem de parametros em C++ ###
+
+Em C++, existem algumas diferenças em relação à passagem de parâmetros em comparação com C.
+
+- Referências: Uma das principais diferenças é a capacidade de passar parâmetros por referência em C++. Em C, apenas a passagem por valor ou ponteiro é possível, o que significa que qualquer modificação nos parâmetros dentro de uma função não será refletida fora dela. Em C++, você pode usar referências para passar parâmetros e ter a capacidade de modificar os valores originais.
+
+```cpp
+#include <iostream>
+
+void modifyValue(int& value) {
+    value = 10;
+}
+
+int main() {
+    int num = 5;
+    std::cout << "Valor original: " << num << std::endl;
+    modifyValue(num);
+    std::cout << "Novo valor: " << num << std::endl;
+    return 0;
+}
+```
+
+---
+
+- Parâmetros Padrão: C++ permite a definição de parâmetros padrão nas funções, o que significa que você pode atribuir um valor padrão a um parâmetro. Assim, quando a função é chamada, se nenhum valor for passado para o parâmetro, o valor padrão será usado. Isso pode ser útil para simplificar o código e evitar a necessidade de sobrecarregar funções com várias versões.
+
+---
+
+- Sobrecarga de Funções: Em C++, você pode ter várias funções com o mesmo nome, mas com diferentes parâmetros, o que é conhecido como sobrecarga de funções. Isso permite que você crie versões diferentes de uma função que realizam operações semelhantes, mas com tipos de dados diferentes ou número variável de argumentos. Em C, você não tem essa capacidade e precisa usar nomes de função diferentes para diferentes implementações.
+
+---
+
+- Passagem por Valor: Em C++, a passagem por valor é semelhante à de C, onde uma cópia do valor é passada para a função. No entanto, em C++, há a opção de mover (transferir) o valor em vez de fazer uma cópia, usando a semântica de movimento (move semantics) com rvalue references (&&). Isso permite uma transferência eficiente de recursos entre objetos.
+
+- Passagem por Ponteiro: A passagem por ponteiro em C++ é semelhante à de C, onde um ponteiro para o valor é passado para a função. No entanto, em C++, você pode usar ponteiros inteligentes, como unique_ptr e shared_ptr, para ajudar na gestão automática de memória e recursos.
 
 ---
 

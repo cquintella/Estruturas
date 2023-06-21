@@ -1,10 +1,21 @@
-A árvore de busca binária é um tipo abstrato de dado que representa uma árvore onde cada nó contém uma chave de busca e seus subnós da esquerda e da direita obedecem a certas condições.
+---
+marp: true
+author: carlos.quintella@uva.br
+backgroundColor: white
+paginate: true
+footer: Estruturas de Dados
+theme: gaia
+---
 
-Se todos os nós em todos os níveis, exceto o último, tivessem dois filhos, então haveria 1=2ˆ0 nó no nível 1, 2=2ˆ1 nós no nível 2, 4=2ˆ2 nós no nível 3 e, geralmente, 2^i nós no nível i + 1.
+# Árvore Binária de Busca  #
 
-Uma árvore que satisfaça essa condição é chamada de árvore binária completa.
+Uma árvore binária de busca (Binary Search Tree - BST) é um tipo especial de árvore binária que segue uma propriedade específica.
+
+Na BST, todos os nós à esquerda de um nó têm valores menores que o nó, e todos os nós à direita de um nó têm valores maiores que o nó. Essa propriedade deve ser verdadeira para todos os nós na árvore.
 
 ---
+
+
 
 Essa é uma explicação de como seria a estrutura de uma árvore se todos os nós em todos os níveis, exceto o último, tivessem exatamente dois filhos. A quantidade de nós em cada nível segue uma progressão geométrica com base em 2. Então, se houver 1 nó no nível 1, haverá 2 nós no nível 2, 4 nós no nível 3 e assim por diante. A fórmula para encontrar o número de nós no nível i é 2^i.
 

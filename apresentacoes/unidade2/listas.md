@@ -62,7 +62,7 @@ Listas podem ser implementadas de várias maneiras, como listas encadeadas simpl
 
 ---
 
-**TAD: Lista**
+# TAD: Lista #
 
 ```pseudocode
 
@@ -131,7 +131,7 @@ graph LR
 
 ## Lista encadeada circular ##
 
-    ```mermaid
+```mermaid
 
     graph LR
      Head(Head) --> A
@@ -142,7 +142,7 @@ graph LR
         A --> B
         B --> C
         C --> A
-    ```
+```
 
 ---
 
@@ -192,3 +192,4 @@ public:
 };
 
 ```
+
