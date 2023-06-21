@@ -1,3 +1,3 @@
 # Estrutura
 
-Arquivos da aula de Estrutura de Dados.
+Arquivos da aula de Estruturas de Dados.
