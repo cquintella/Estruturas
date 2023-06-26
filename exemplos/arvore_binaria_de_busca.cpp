@@ -315,8 +315,13 @@ int main() {
     std::cout << "Pós-Ordem:" << std::endl;
     my_tree.post_order_traversal(my_tree.root);
     
-    
+    // Removendo o Nó
     my_tree.remove(my_tree.find(20));
+        // Mostrando a árvore
+     mermaidCode = my_tree.show_branch(my_tree.root);
+    std::cout << "graph TD\n" << mermaidCode << std::endl<<std::endl;
+    std::cout<<"Veja em: https://mermaid.live"<<std::endl<<std::endl;
+    
     
     return 0;
 }
