@@ -1,4 +1,4 @@
----
+t---
 marp: true
 author: carlos.quintella@uva.br
 backgroundColor: white
@@ -244,55 +244,55 @@ Essa sequência resulta na visita dos nós na ordem em que eles aparecem à medi
 
 ```mermaid
 graph TD
-A --> B
-A --> C
-A --> H
-B --> D
-B --> E
-C --> F
-C --> G
-C --> I
+A --- B
+A --- C
+A --- H
+B --- D
+B --- E
+C --- F
+C --- G
+C --- I
 ```
 
 
 
 ```mermaid
 graph TD
-1 --> 2
-1 --> 3
-2 --> 4
-4 --> 5
-4 --> 6
-3 --> 7
-7 --> 8
+1 --- 2
+1 --- 3
+2 --- 4
+4 --- 5
+4 --- 6
+3 --- 7
+7 --- 8
 ```
 ```mermaid
 graph TD
-X --> Y
-X --> Z
-Y --> W
-Y --> V
-Z --> U
-Z --> T
+X --- Y
+X --- Z
+Y --- W
+Y --- V
+Z --- U
+Z --- T
 
 ```
 ```mermaid
 graph TD
-M --> N
-N --> O
-O --> P
-P --> Q
+M --- N
+N --- O
+O --- P
+P --- Q
 
 ```
 ```mermaid
 graph TD
-Root --> A1
-Root --> A2
-A1 --> B1
-A1 --> B2
-A2 --> B3
-B2 --> C1
-B2 --> C2
+Root --- A1
+Root --- A2
+A1 --- B1
+A1 --- B2
+A2 --- B3
+B2 --- C1
+B2 --- C2
 
 ```
 
