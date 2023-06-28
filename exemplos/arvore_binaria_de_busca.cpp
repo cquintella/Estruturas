@@ -7,19 +7,19 @@ public:
     int key;                        // Um tipo com chave e descrição.
     std::string description;    
     static int num_pkg;             // Isso aqui é estático serve pra contar o numero de pacotes para gerar numero sequencial da chave.
-    
+   
     Data_Package(std::string description) {            // Aqui é o construtor
         Data_Package::num_pkg++;                       // A chave cresce sequencialmente.
         this->key = Data_Package::num_pkg;
         this->description = description;
     }
-    
+   
     void print() {                                     // Um método que imprime o item de dados.
         std::cout << "key: " << key << "\t" << description << std::endl;
     }
 };
 
-                      
+                     
 
 struct Node {
     Node* left;
@@ -28,36 +28,44 @@ struct Node {
 };
 
 class Binary_Tree {                      // Nossa classe de árvore binária
+private:
     int size;                            // contador de número de nós
-    
-public: 
+   
+public:
     Node* root;                          // Ela tem uma raiz
-    
+   
     Binary_Tree() {
         size = 0;
         root = nullptr;
     }
-    
+   
     ~Binary_Tree() {
         // Destructor implementation if needed
-        delete_tree(root);
+        delete_branch(root);
     }
-    
-    void delete_tree(Node* node) {          // Usamos pós ordem para excluir os nós da árvore
+   
+    int get_size(){
+        return this->size;
+    }
+   
+    void delete_branch(Node* node) {          // Usamos pós ordem para excluir os nós da árvore
         if (node == nullptr)                // se não tem nada para excluir retorna.
             return;
-        
-        delete_tree(node->left);           // apagar à esqueda, se tiver.
-        delete_tree(node->right);          // apagar componentes à direita, se tiver.
+       
+        delete_branch(node->left);           // apagar à esqueda, se tiver.
+        delete_branch(node->right);          // apagar componentes à direita, se tiver.
         std::cout<<"Deleting Node: "<<node<<std::endl;
-        delete node->data;                // excluir o dado dessa folha.
+        std::cout<<"--- deleting: "<<node<<" key: "<<node->data->key<<std::endl;
+        //delete node->data;                // excluir o dado dessa folha.
         this->size--;                      // diminuir o tamanho da árvore.
-        delete node;                      // tirar a folha.
+        delete node; // tirar a folha.
+        return ;  
     }
-    
+   
 Node* find(int the_key) {
     Node* current = this->root;
     while (current != nullptr) {
+        std::cout<<"Olhando: "<<current->data->key<<"  ";
         if (the_key == current->data->key) {
             return current;
         } else if (the_key < current->data->key) {
@@ -66,6 +74,7 @@ Node* find(int the_key) {
             current = current->right;
         }
     }
+    std::cout<<std::endl;
     return nullptr; // Item não encontrado na árvore
 }
 
@@ -87,7 +96,7 @@ Node* get_parent(Node* current, Node* node) {
     return get_parent(current->right, node); // Procurar na subárvore direita
 }
 
-    
+   
 int remove(Node* node_to_remove) {
     if (node_to_remove == nullptr) {
         return -1; // Nó não encontrado na árvore
@@ -153,7 +162,8 @@ int remove(Node* node_to_remove) {
     }
 
     delete node_to_remove;
-    size--;
+    this->size --;
+   
     return 0; // Remoção bem-sucedida
 }
 
@@ -178,24 +188,24 @@ std::string show_branch(Node* branch_root) {
     return diagram;
 }
 
-    
-    int insert(Data_Package* the_data) {
+   
+int insert(Data_Package* the_data) {
         this->size++;
         Node* new_node = new Node;
         new_node->data = the_data;
         new_node->left = nullptr;
         new_node->right = nullptr;
-        
+       
         if (this->root == nullptr) {
             this->root = new_node;
             return 0;
         } else {
             Node* current = this->root;
             Node* parent = nullptr;
-            
+           
             while (current != nullptr) {
                 parent = current;
-                
+               
                 if (the_data->key < current->data->key)
                     current = current->left;
                 else if (the_data->key > current->data->key)
@@ -203,13 +213,13 @@ std::string show_branch(Node* branch_root) {
                 else
                     return -1; // Duplicate keys not allowed
             }
-            
+           
             if (the_data->key < parent->data->key)
                 parent->left = new_node;
             else
                 parent->right = new_node;
         }
-        
+       
         return 0;
     }
 
@@ -217,27 +227,27 @@ std::string show_branch(Node* branch_root) {
         if (node == nullptr) {
                 return;
         }
-        
+       
         in_order_traversal(node->left);
         node->data->print();
         in_order_traversal(node->right);
     }
-    
+   
     void post_order_traversal(Node* node) {
         if (node == nullptr) {
             return;
         }
-        
+       
         post_order_traversal(node->left);
         post_order_traversal(node->right);
         node->data->print();
     }
-    
+   
     void pre_order_traversal(Node* node) {
         if (node == nullptr) {
             return;
         }
-    
+   
         node->data->print();
         pre_order_traversal(node->left);
         pre_order_traversal(node->right);
@@ -269,20 +279,21 @@ int main() {
     Data_Package my_data18("Luis Pereira");
     Data_Package my_data19("Manguito");
     Data_Package my_data20("Roberto Dinamite");
-  
-    
+ 
+   
     Binary_Tree my_tree;
+    std::cout<< "Tamanho da Árvore: " << my_tree.get_size()<<std::endl;
  //Populando a arvore : como ela não é auto balanceável, vamos colocar fora de ordem para nao ficar uma tripa.
-    my_tree.insert(&my_data4);
-    my_tree.insert(&my_data8);
-    my_tree.insert(&my_data1);
+    my_tree.insert(&my_data10);
+    my_tree.insert(&my_data15);
+    my_tree.insert(&my_data5);
     my_tree.insert(&my_data18);
     my_tree.insert(&my_data17);
     my_tree.insert(&my_data7);
     my_tree.insert(&my_data20);
     my_tree.insert(&my_data2);
     my_tree.insert(&my_data20);
-    my_tree.insert(&my_data5);
+    my_tree.insert(&my_data1);
     my_tree.insert(&my_data13);
     my_tree.insert(&my_data3);
     my_tree.insert(&my_data16);
@@ -291,12 +302,12 @@ int main() {
     my_tree.insert(&my_data19);
     my_tree.insert(&my_data9);
     my_tree.insert(&my_data14);
-    my_tree.insert(&my_data10);
+    my_tree.insert(&my_data4);
     my_tree.insert(&my_data12);
-    my_tree.insert(&my_data15);
-    
+    my_tree.insert(&my_data8);
+   
 
-    
+    std::cout<< "Tamanho da Árvore: " << my_tree.get_size()<<std::endl;
     // Mostrando a árvore
     std::string mermaidCode = my_tree.show_branch(my_tree.root);
     std::cout << "graph TD\n" << mermaidCode << std::endl<<std::endl;
@@ -306,22 +317,25 @@ int main() {
     std::cout << "Buscando uma chave: " << 4 <<std::endl;
     my_tree.find(4)->data->print();
     std::cout <<std::endl;
-    
-    
+   
+   
     std::cout << "Pré-Ordem:" << std::endl;
     my_tree.pre_order_traversal(my_tree.root);
     std::cout << "Em-Ordem:" << std::endl;
     my_tree.in_order_traversal(my_tree.root);
     std::cout << "Pós-Ordem:" << std::endl;
     my_tree.post_order_traversal(my_tree.root);
-    
+   
     // Removendo o Nó
-    my_tree.remove(my_tree.find(20));
+    my_tree.remove(my_tree.find(10));
         // Mostrando a árvore
-     mermaidCode = my_tree.show_branch(my_tree.root);
+    std::cout<< "Tamanho da Árvore: " << my_tree.get_size()<<std::endl;
+   
+    mermaidCode = my_tree.show_branch(my_tree.root);
     std::cout << "graph TD\n" << mermaidCode << std::endl<<std::endl;
     std::cout<<"Veja em: https://mermaid.live"<<std::endl<<std::endl;
-    
-    
+   
+    my_tree.delete_branch(my_tree.root);
+   
     return 0;
 }
