@@ -9,7 +9,7 @@ theme: gaia
 
 <!-- _class: lead -->
 
-# Filas (Queues)    #
+# Filas (Queues) #
 
 - Professor: Carlos Alvaro Quintella
 - Revisão: 05/06/2023
@@ -87,7 +87,7 @@ Tipo Fila
 
 ---
 
-Fila usando memória dinâmica
+Fila usando memória dinâmica:
 
 ```c
 #include <stdio.h>
@@ -299,7 +299,7 @@ Tipo FilaComPrioridade:
 
 ---
 
-```c++
+```cpp
 #include <iostream>
 #include <queue>
 
@@ -404,7 +404,11 @@ int isEmpty(CircularQueue* queue) {
 int isFull(CircularQueue* queue) {
     return (queue->size == queue->capacity);
 }
+```
 
+---
+
+```cpp
 // Função para enfileirar um elemento na fila
 void enqueue(CircularQueue* queue, int item) {
     if (isFull(queue)) {
@@ -457,6 +461,12 @@ void printQueue(CircularQueue* queue) {
     printf("\n");
 }
 
+```
+
+---
+
+```cpp
+
 // Função para liberar a memória alocada pela fila
 void destroyQueue(CircularQueue* queue) {
     free(queue->array);
@@ -466,7 +476,6 @@ void destroyQueue(CircularQueue* queue) {
 int main() {
     int capacity = 5;
     CircularQueue* queue = createQueue(capacity);
-
     enqueue(queue, 1);
     enqueue(queue, 2);
     enqueue(queue, 3);
@@ -504,3 +513,7 @@ int main() {
 ---
 
 Implemente uma fila usando duas pilhas, enfileirar e desenfileirar. Quando a fila desenfilarar esvazir passe os elementos de enfileirar para desenfileirar.
+
+---
+
+## Recursos Adicionais ##

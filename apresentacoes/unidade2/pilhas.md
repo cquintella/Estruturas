@@ -32,7 +32,7 @@ Pilha é uma estrutura de dados linear, comumente utilizada para organizar e man
 
 Quais as vantagens e desvantagens de cada uma?
 
-* A escolha depende das necessidades do problema e dos requisitos de desempenho.
+- A escolha depende das necessidades do problema e dos requisitos de desempenho.
 
 ---
 
@@ -155,7 +155,6 @@ public:
     }
 };
 ````
-
 
 ---
 
